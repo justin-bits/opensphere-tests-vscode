@@ -15,4 +15,46 @@
 	// 	],
 	// 	"description": "Log output to console"
 	// }
+	"Element is visible": {
+		"scope": "javascript,typescript",
+		"prefix": "vis",
+		"body": "cy.get($1).should('be.visible')$0",
+		"description": "Element should be visible"
+	},
+	"Element exists": {
+		"scope": "javascript,typescript",
+		"prefix": "exi",
+		"body": "cy.get($1).should('exist')$0",
+		"description": "Element should exist"
+	},
+	"Element doesn't exist": {
+		"scope": "javascript,typescript",
+		"prefix": "not",
+		"body": "cy.get($1).should('not.exist')$0",
+		"description": "Element should not exist"
+	},
+	"Click element": {
+		"scope": "javascript,typescript",
+		"prefix": "cli",
+		"body": "cy.get($1).click()$0",
+		"description": "Click on element"
+	},
+	"Element contains": {
+		"scope": "javascript,typescript",
+		"prefix": "con",
+		"body": "cy.get($1).contains('$2')$0",
+		"description": "Element should contain text"
+	},
+	"Element has value": {
+		"scope": "javascript,typescript",
+		"prefix": "val",
+		"body": "cy.get($1).should('have.value', '$2')$0",
+		"description": "Element should have value"
+	},
+	"Element has class": {
+		"scope": "javascript,typescript",
+		"prefix": "cla",
+		"body": "cy.get($1).should('have.class', $2)$0",
+		"description": "Element should have class"
+	}
 }
