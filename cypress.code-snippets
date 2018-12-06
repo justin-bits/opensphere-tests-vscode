@@ -21,29 +21,35 @@
 		"body": "cy.get($1).should('be.visible')$0",
 		"description": "Element should be visible"
 	},
+	"Element is NOT visible": {
+		"scope": "javascript,typescript",
+		"prefix": "nvis",
+		"body": "cy.get($1).should('not.be.visible')$0",
+		"description": "Element should NOT be visible"
+	},
 	"Element exists": {
 		"scope": "javascript,typescript",
 		"prefix": "exi",
 		"body": "cy.get($1).should('exist')$0",
 		"description": "Element should exist"
 	},
-	"Element doesn't exist": {
+	"Element does NOT exist": {
 		"scope": "javascript,typescript",
-		"prefix": "not",
+		"prefix": "nexi",
 		"body": "cy.get($1).should('not.exist')$0",
-		"description": "Element should not exist"
-	},
-	"Click element": {
-		"scope": "javascript,typescript",
-		"prefix": "cli",
-		"body": "cy.get($1).click()$0",
-		"description": "Click on element"
+		"description": "Element should NOT exist"
 	},
 	"Element contains": {
 		"scope": "javascript,typescript",
 		"prefix": "con",
-		"body": "cy.get($1).contains('$2')$0",
+		"body": "cy.get($1).should('contain', '$2')$0",
 		"description": "Element should contain text"
+	},
+	"Element does NOT contain": {
+		"scope": "javascript,typescript",
+		"prefix": "ncon",
+		"body": "cy.get($1).should('not.contain', '$2')$0",
+		"description": "Element should NOT contain text"
 	},
 	"Element has value": {
 		"scope": "javascript,typescript",
@@ -51,10 +57,28 @@
 		"body": "cy.get($1).should('have.value', '$2')$0",
 		"description": "Element should have value"
 	},
+	"Element does NOT have value": {
+		"scope": "javascript,typescript",
+		"prefix": "nval",
+		"body": "cy.get($1).should('not.have.value', '$2')$0",
+		"description": "Element should have value"
+	},
 	"Element has class": {
 		"scope": "javascript,typescript",
 		"prefix": "cla",
 		"body": "cy.get($1).should('have.class', $2)$0",
 		"description": "Element should have class"
-	}
+	},
+	"Element does NOT have class": {
+		"scope": "javascript,typescript",
+		"prefix": "ncla",
+		"body": "cy.get($1).should('not.have.class', $2)$0",
+		"description": "Element should NOT have class"
+	},
+	"Click element": {
+		"scope": "javascript,typescript",
+		"prefix": "cli",
+		"body": "cy.get($1).click()$0",
+		"description": "Click on element"
+	},
 }
