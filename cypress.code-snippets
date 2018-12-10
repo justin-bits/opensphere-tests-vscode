@@ -75,10 +75,28 @@
 		"body": "cy.get($1).should('not.have.class', $2)$0",
 		"description": "Element should NOT have class"
 	},
+	"Element has attribute": {
+		"scope": "javascript,typescript",
+		"prefix": "att",
+		"body": "cy.get($1).should('have.attr', '$2', '$3')$0",
+		"description": "Element should have attribute"
+	},
+	"Element does NOT have attribute": {
+		"scope": "javascript,typescript",
+		"prefix": "natt",
+		"body": "cy.get($1).should('not.have.attr', '$2', '$3')$0",
+		"description": "Element should NOT have attribute"
+	},
 	"Click element": {
 		"scope": "javascript,typescript",
 		"prefix": "cli",
 		"body": "cy.get($1).click()$0",
 		"description": "Click on element"
+	},
+	"Type into element": {
+		"scope": "javascript,typescript",
+		"prefix": "typ",
+		"body": "cy.get($1).type('$2')$0",
+		"description": "Enter text into element"
 	},
 }
