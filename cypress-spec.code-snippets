@@ -68,16 +68,16 @@
 		"scope": "javascript,typescript",
 		"prefix": "it",
 		"body": [
-            "it('should $2', function () {",
+            "it('should $1', function () {",
             "    // Setup",
-            "    $0",
+            "    $2",
             "",
             "    // Test",
             "",
             "",
             "    // Clean up",
             "",
-            "})",
+            "})$0",
         ],
 		"description": "Add it block"
 	}
