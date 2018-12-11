@@ -99,4 +99,16 @@
 		"body": "cy.get($1).type('$2')$0",
 		"description": "Enter text into element"
 	},
+	"Get element text": {
+		"scope": "javascript,typescript",
+		"prefix": "get",
+		"body": [
+			"cy.get($1).then(($$2 => {",
+			"    const $3 = $$2.text()",
+			"    $4 // do something here to change the state of the element",
+			"    $0 // make an assertion here about the element",
+			"}))"
+		],
+		"description": "Store the value of the element"
+	}
 }
