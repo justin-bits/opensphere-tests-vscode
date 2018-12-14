@@ -93,6 +93,12 @@
 		"body": "cy.get($1).click()$0",
 		"description": "Click on element"
 	},
+	"Right click element": {
+		"scope": "javascript,typescript",
+		"prefix": "rcli",
+		"body": "cy.get($1).rightClick()$0",
+		"description": "Right click on element"
+	},
 	"Clear element": {
 		"scope": "javascript,typescript",
 		"prefix": "cle",

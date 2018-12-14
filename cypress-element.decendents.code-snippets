@@ -93,6 +93,12 @@
 		"body": "cy.get($1).find($2).click()$0",
 		"description": "Click on decendent of element"
 	},
+	"Right click decendent element": {
+		"scope": "javascript,typescript",
+		"prefix": "drcli",
+		"body": "cy.get($1).find($2).rightClick()$0",
+		"description": "Right click on decendent element"
+	},
 	"Clear decendent of element": {
 		"scope": "javascript,typescript",
 		"prefix": "dcle",
