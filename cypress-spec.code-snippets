@@ -77,5 +77,21 @@
             "})$0",
         ],
 		"description": "Add it block"
+    },
+    "Handle exception": {
+		"scope": "javascript,typescript",
+		"prefix": "exc",
+		"body": [
+            "// Remove exception handling promptly after referenced issue(s) have been resolved.",
+            "cy.on('uncaught:exception', (err, runnable) => {",
+            "// Re-opening the timeline throws an error, #$1",
+            "if (err.message.includes('$2')){",
+            "    expect(err.message).to.include('$2')",
+            "    return false",
+            "}",
+            "return true",
+        "})"
+        ],
+		"description": "Add exception handling"
 	}
 }
