@@ -111,16 +111,27 @@
 		"body": "cy.get($1).find($2).type('$3')$0",
 		"description": "Enter text into decendent of element"
 	},
-	"Get decendent of element text": {
+	// Example: cy.get(<selector>).invoke('text').should('match', /<regex>/)
+	"Invoke function on decendent of element": {
+		"scope": "javascript,typescript",
+		"prefix": "dinv",
+		"body": "cy.get($1).find($2).invoke('$3')$0",
+		"description": "Invoke a function on an element decendent"
+	},
+	// This is used when the initial state of the element will be used during the test.
+	// It should only be used if the initial element state cannot be known until runtime.
+	// A common scenario is to make note of the current element, change something, then compare to the original state.
+	// Another example would be using the initial element state to predict a future element state.
+	"Get current element decendent state": {
 		"scope": "javascript,typescript",
 		"prefix": "dget",
 		"body": [
 			"cy.get($1).find($2).then(($$3 => {",
 			"    const $4 = $$3.text()",
 			"    $5 // do something here to change the state of the element",
-			"    $0 // make an assertion here about the element",
+			"    cy.get($1).find($2).should('not.contain', $4)$0 // get the element again, compare to the original element",
 			"}))"
 		],
-		"description": "Store the value of the decendent element"
+		"description": "Get element decendent, take an action, use previous element value in an assertion"
 	}
 }
