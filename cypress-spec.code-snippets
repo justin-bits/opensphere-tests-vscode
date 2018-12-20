@@ -82,15 +82,15 @@
 		"scope": "javascript,typescript",
 		"prefix": "exc",
 		"body": [
-            "// Remove exception handling promptly after referenced issue(s) have been resolved.",
+            "// TODO: Remove exception handling promptly after referenced issue(s) have been resolved.",
             "cy.on('uncaught:exception', (err, runnable) => {",
-            "// Re-opening the timeline throws an error, #$1",
-            "if (err.message.includes('$2')){",
-            "    expect(err.message).to.include('$2')",
+            "// $1 throws an error, #$2",
+            "if (err.message.includes('$3')){",
+            "    expect(err.message).to.include('$3')",
             "    return false",
             "}",
             "return true",
-        "})"
+        "})$0"
         ],
 		"description": "Add exception handling"
 	}
