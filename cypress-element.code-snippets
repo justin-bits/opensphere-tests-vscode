@@ -18,104 +18,104 @@
 	"Element is visible": {
 		"scope": "javascript,typescript",
 		"prefix": "vis",
-		"body": "cy.get($1).should('be.visible')$0",
+		"body": "cy.get(${1:'<Enter an element selector here>'}).should('be.visible')$0",
 		"description": "Element should be visible"
 	},
 	"Element is NOT visible": {
 		"scope": "javascript,typescript",
 		"prefix": "nvis",
-		"body": "cy.get($1).should('not.be.visible')$0",
+		"body": "cy.get(${1:'<Enter an element selector here>'}).should('not.be.visible')$0",
 		"description": "Element should NOT be visible"
 	},
 	"Element exists": {
 		"scope": "javascript,typescript",
 		"prefix": "exi",
-		"body": "cy.get($1).should('exist')$0",
+		"body": "cy.get(${1:'<Enter an element selector here>'}).should('exist')$0",
 		"description": "Element should exist"
 	},
 	"Element does NOT exist": {
 		"scope": "javascript,typescript",
 		"prefix": "nexi",
-		"body": "cy.get($1).should('not.exist')$0",
+		"body": "cy.get(${1:'<Enter an element selector here>'}).should('not.exist')$0",
 		"description": "Element should NOT exist"
 	},
 	"Element contains": {
 		"scope": "javascript,typescript",
 		"prefix": "con",
-		"body": "cy.get($1).should('contain', '$2')$0",
+		"body": "cy.get(${1:'<Enter an element selector here>'}).should('contain', '${2:<Enter text here>}')$0",
 		"description": "Element should contain text"
 	},
 	"Element does NOT contain": {
 		"scope": "javascript,typescript",
 		"prefix": "ncon",
-		"body": "cy.get($1).should('not.contain', '$2')$0",
+		"body": "cy.get(${1:'<Enter an element selector here>'}).should('not.contain', '${2:<Enter text here>}')$0",
 		"description": "Element should NOT contain text"
 	},
 	"Element has value": {
 		"scope": "javascript,typescript",
 		"prefix": "val",
-		"body": "cy.get($1).should('have.value', '$2')$0",
+		"body": "cy.get(${1:'<Enter an element selector here>'}).should('have.value', '${2:<Enter text here>}')$0",
 		"description": "Element should have value"
 	},
 	"Element does NOT have value": {
 		"scope": "javascript,typescript",
 		"prefix": "nval",
-		"body": "cy.get($1).should('not.have.value', '$2')$0",
+		"body": "cy.get(${1:'<Enter an element selector here>'}).should('not.have.value', '${2:<Enter text here>}')$0",
 		"description": "Element should have value"
 	},
 	"Element has class": {
 		"scope": "javascript,typescript",
 		"prefix": "cla",
-		"body": "cy.get($1).should('have.class', $2)$0",
+		"body": "cy.get(${1:'<Enter an element selector here>'}).should('have.class', ${2:'<Enter class here>'})$0",
 		"description": "Element should have class"
 	},
 	"Element does NOT have class": {
 		"scope": "javascript,typescript",
 		"prefix": "ncla",
-		"body": "cy.get($1).should('not.have.class', $2)$0",
+		"body": "cy.get(${1:'<Enter an element selector here>'}).should('not.have.class', ${2:'<Enter class here>'})$0",
 		"description": "Element should NOT have class"
 	},
 	"Element has attribute": {
 		"scope": "javascript,typescript",
 		"prefix": "att",
-		"body": "cy.get($1).should('have.attr', '$2', '$3')$0",
+		"body": "cy.get(${1:'<Enter an element selector here>'}).should('have.attr', '${2:<Enter attribute name here>}', '${3:<Enter attribute value here>}')$0",
 		"description": "Element should have attribute"
 	},
 	"Element does NOT have attribute": {
 		"scope": "javascript,typescript",
 		"prefix": "natt",
-		"body": "cy.get($1).should('not.have.attr', '$2', '$3')$0",
+		"body": "cy.get(${1:'<Enter an element selector here>'}).should('not.have.attr', '${2:<Enter attribute name here>}', '${3:<Enter attribute value here>}')$0",
 		"description": "Element should NOT have attribute"
 	},
 	"Click element": {
 		"scope": "javascript,typescript",
 		"prefix": "cli",
-		"body": "cy.get($1).click()$0",
+		"body": "cy.get(${1:'<Enter an element selector here>'}).click()$0",
 		"description": "Click on element"
 	},
 	"Right click element": {
 		"scope": "javascript,typescript",
 		"prefix": "rcli",
-		"body": "cy.get($1).rightClick()$0",
+		"body": "cy.get(${1:'<Enter an element selector here>'}).rightClick()$0",
 		"description": "Right click on element"
 	},
 	"Clear element": {
 		"scope": "javascript,typescript",
 		"prefix": "cle",
-		"body": "cy.get($1).clear()$0",
+		"body": "cy.get(${1:'<Enter an element selector here>'}).clear()$0",
 		"description": "Clear current text in element"
 	},
 	"Type into element": {
 		"scope": "javascript,typescript",
 		"prefix": "typ",
-		"body": "cy.get($1).type('$2')$0",
+		"body": "cy.get(${1:'<Enter an element selector here>'}).type('${2:<Enter text here>}')$0",
 		"description": "Enter text into element"
 	},
 	// Example: cy.get(<selector>).invoke('text').should('match', /<regex>/)
 	"Invoke function on element": {
 		"scope": "javascript,typescript",
 		"prefix": "inv",
-		"body": "cy.get($1).invoke('$2')$0",
+		"body": "cy.get(${1:'<Enter an element selector here>'}).invoke('${2:<Enter function name here>}')$0",
 		"description": "Invoke a function on an element"
 	},
 	// This is used when the initial state of the element will be used during the test.
@@ -126,10 +126,10 @@
 		"scope": "javascript,typescript",
 		"prefix": "get",
 		"body": [
-			"cy.get($1).then(($$2 => {",
-			"    const $3 = $$2.text()",
-			"    $4 // do something here to change the state of the element",
-			"    cy.get($1).should('not.contain', $3)$0 // get the element again, compare to the original element",
+			"cy.get(${1:'<Enter an element selector here>'}).then(($${2:enterNameOfElementHere} => {",
+			"    const ${3:enterNameOfElementPropertyHere} = $${2:enterNameOfElementHere}.text()",
+			"    ${4:// <Do something here to change the state of the element>}",
+			"    cy.get(${1:'<Enter an element selector here>'}).should('not.contain', ${3:enterNameOfElementPropertyHere})${0: // <Get the element again, compare to the original element>}",
 			"}))"
 		],
 		"description": "Get element, take an action, use previous element value in an assertion"
