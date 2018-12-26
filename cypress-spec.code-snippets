@@ -97,5 +97,11 @@
         "})$0"
         ],
 		"description": "Add exception handling"
+    },
+    "Add TODO": {
+		"scope": "javascript,typescript",
+		"prefix": "todo",
+		"body": "// TODO: ${1:<Enter todo text here>}",
+		"description": "Adds TODO comment"
 	}
 }
