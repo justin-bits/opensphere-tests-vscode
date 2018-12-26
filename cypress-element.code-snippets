@@ -51,6 +51,12 @@
 		"body": "cy.get(${1:'<Enter an element selector here>'}).should('not.contain', '${2:<Enter text here>}')$0",
 		"description": "Element should NOT contain text"
 	},
+	"Element is empty": {
+		"scope": "javascript,typescript",
+		"prefix": "emp",
+		"body": "cy.get(${1:'<Enter an element selector here>'}).should('be.empty')$0",
+		"description": "Element should be empty"
+	},
 	"Element has value": {
 		"scope": "javascript,typescript",
 		"prefix": "val",

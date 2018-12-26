@@ -51,6 +51,12 @@
 		"body": "cy.get(${1:'<Enter a parent element selector here>'}).find(${2:'<Enter a child element selector here>'}).should('not.contain', '${3:<Enter text here>}')$0",
 		"description": "Decendent of element should NOT contain text"
 	},
+	"Decendent of element is empty": {
+		"scope": "javascript,typescript",
+		"prefix": "demp",
+		"body": "cy.get(${1:'<Enter an element selector here>'}).find(${2:'<Enter a child element selector here>'}).should('be.empty')$0",
+		"description": "Element should be empty"
+	},
 	"Decendent of element has value": {
 		"scope": "javascript,typescript",
 		"prefix": "dval",
