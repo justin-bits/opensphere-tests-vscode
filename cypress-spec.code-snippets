@@ -92,6 +92,16 @@
         ],
 		"description": "Add before block"
     },
+    "Add after": {
+		"scope": "javascript,typescript",
+		"prefix": "aft",
+		"body": [
+            "after('${1:<enter after description here>}', function () {",
+            "    ${2:// <Enter after steps here>}",
+            "})$0"
+        ],
+		"description": "Add after block"
+    },
     "Handle exception": {
 		"scope": "javascript,typescript",
 		"prefix": "exc",
