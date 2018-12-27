@@ -82,6 +82,16 @@
         ],
 		"description": "Add it block"
     },
+    "Add before": {
+		"scope": "javascript,typescript",
+		"prefix": "bef",
+		"body": [
+            "before('${1:<enter before description here>}', function () {",
+            "    ${2:// <Enter before steps here>}",
+            "})$0"
+        ],
+		"description": "Add before block"
+    },
     "Handle exception": {
 		"scope": "javascript,typescript",
 		"prefix": "exc",
