@@ -133,9 +133,9 @@
 		"prefix": "dget",
 		"body": [
 			"cy.get(${1:'<Enter a parent element selector here>'}).find(${2:'<Enter a child element selector here>'}).then(($${3:enterNameOfElementHere} => {",
-			"    const ${4:enterNameOfElementPropertyHere} = $${3:enterNameOfElementHere}.text()",
-			"    ${5:// <Do something here to change the state of the element>}",
-			"    cy.get(${1:'<Enter a parent element selector here>'}).find(${2:'<Enter a child element selector here>'}).should('not.contain', ${4:enterNameOfElementPropertyHere})$0 // <Get the element again, compare to the original element>",
+			"  const ${4:enterNameOfElementPropertyHere} = $${3:enterNameOfElementHere}.text()",
+			"  ${5:// <Do something here to change the state of the element>}",
+			"  cy.get(${1:'<Enter a parent element selector here>'}).find(${2:'<Enter a child element selector here>'}).should('not.contain', ${4:enterNameOfElementPropertyHere})$0 // <Get the element again, compare to the original element>",
 			"}))"
 		],
 		"description": "Get element decendent, take an action, use previous element value in an assertion"
