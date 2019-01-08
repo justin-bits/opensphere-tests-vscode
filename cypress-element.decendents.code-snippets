@@ -139,5 +139,17 @@
 			"}))"
 		],
 		"description": "Get element decendent, take an action, use previous element value in an assertion"
+  },
+  "Log element decendent text to Cypress": {
+		"scope": "javascript,typescript",
+		"prefix": "dlog",
+		"body": "cy.get(${1:'<Enter a parent element selector here>'}).find(${2:'<Enter a child element selector here>'}).then(($element => {cy.log($element.text())}))",
+		"description": "Write an element's decendent text contents to the log"
+  },
+  "Log element decendent value to Cypress": {
+		"scope": "javascript,typescript",
+		"prefix": "dlog",
+		"body": "cy.get(${1:'<Enter a parent element selector here>'}).find(${2:'<Enter a child element selector here>'}).then(($element => {cy.log($element.val())}))",
+		"description": "Write an element's decendent value to the log"
 	}
 }

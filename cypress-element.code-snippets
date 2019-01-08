@@ -139,5 +139,17 @@
 			"}))"
 		],
 		"description": "Get element, take an action, use previous element value in an assertion"
+  },
+  "Log element text to Cypress": {
+		"scope": "javascript,typescript",
+		"prefix": "log",
+		"body": "cy.get(${1:'<Enter an element selector here>'}).then(($element => {cy.log($element.text())}))",
+		"description": "Write an element's text contents to the log"
+  },
+  "Log element value to Cypress": {
+		"scope": "javascript,typescript",
+		"prefix": "log",
+		"body": "cy.get(${1:'<Enter an element selector here>'}).then(($element => {cy.log($element.val())}))",
+		"description": "Write an element's value to the log"
 	}
 }
