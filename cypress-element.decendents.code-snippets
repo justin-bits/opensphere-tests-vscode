@@ -15,164 +15,48 @@
 	// 	],
 	// 	"description": "Log output to console"
 	// }
-	"Decendent of element is visible": {
-		"scope": "javascript,typescript",
-		"prefix": "dvis",
-		"body": [
-      "cy.get(${1:'<Enter a parent element selector here>'})",
-      "  .find(${2:'<Enter a child element selector here>'})",
-      "  .should('be.visible')$0"
-    ],
-		"description": "Decendent of element should be visible"
-	},
-	"Decendent of element is NOT visible": {
-		"scope": "javascript,typescript",
-		"prefix": "dnvis",
-		"body": [
-      "cy.get(${1:'<Enter a parent element selector here>'})",
-      "  .find(${2:'<Enter a child element selector here>'})",
-      "  .should('not.be.visible')$0"
-    ],
-		"description": "Decendent of element should NOT be visible"
-	},
-	"Decendent of element exists": {
-		"scope": "javascript,typescript",
-		"prefix": "dexi",
-		"body": [
-      "cy.get(${1:'<Enter a parent element selector here>'})",
-      "  .find(${2:'<Enter a child element selector here>'})",
-      "  .should('exist')$0"
-    ],
-      "description": "Decendent of element should exist"
-	},
-	"Decendent of element does NOT exist": {
-		"scope": "javascript,typescript",
-		"prefix": "dnexi",
-		"body": [
-      "cy.get(${1:'<Enter a parent element selector here>'})",
-      "  .find(${2:'<Enter a child element selector here>'})",
-      "  .should('not.exist')$0"
-    ],
-		"description": "Decendent of element should NOT exist"
-	},
-	"Decendent of element contains": {
-		"scope": "javascript,typescript",
-		"prefix": "dcon",
-		"body": [
-      "cy.get(${1:'<Enter a parent element selector here>'})",
-      "  .find(${2:'<Enter a child element selector here>'})",
-      "  .should('contain', '${3:<Enter text here>}')$0"
-    ],
-		"description": "Decendent of element should contain text"
-	},
-	"Decendent of element does NOT contain": {
-		"scope": "javascript,typescript",
-		"prefix": "dncon",
-		"body": [
-      "cy.get(${1:'<Enter a parent element selector here>'})",
-      "  .find(${2:'<Enter a child element selector here>'})",
-      "  .should('not.contain', '${3:<Enter text here>}')$0"
-    ],
-		"description": "Decendent of element should NOT contain text"
-	},
-	"Decendent of element is empty": {
-		"scope": "javascript,typescript",
-		"prefix": "demp",
-		"body": [
-      "cy.get(${1:'<Enter an element selector here>'})",
-      "  .find(${2:'<Enter a child element selector here>'})",
-      "  .should('be.empty')$0"
-    ],
-		"description": "Element should be empty"
-	},
-	"Decendent of element has value": {
-		"scope": "javascript,typescript",
-		"prefix": "dval",
-		"body": [
-      "cy.get(${1:'<Enter a parent element selector here>'})",
-      "  .find(${2:'<Enter a child element selector here>'})",
-      "  .should('have.value', '${3:<Enter text here>}')$0"
-    ],
-		"description": "Decendent of element should have value"
-	},
-	"Decendent of element does NOT have value": {
-		"scope": "javascript,typescript",
-		"prefix": "dnval",
-		"body": [
-      "cy.get(${1:'<Enter a parent element selector here>'})",
-      "  .find(${2:'<Enter a child element selector here>'})",
-      "  .should('not.have.value', '${3:<Enter text here>}')$0"
-    ],
-		"description": "Decendent of element should have value"
-	},
-	"Decendent of element has class": {
-		"scope": "javascript,typescript",
-		"prefix": "dcla",
-		"body": [
-      "cy.get(${1:'<Enter a parent element selector here>'})",
-      "  .find(${2:'<Enter a child element selector here>'})",
-      "  .should('have.class', ${3:'<Enter class here>'})$0"
-    ],
-		"description": "Decendent of element should have class"
-	},
-	"Decendent of element does NOT have class": {
-		"scope": "javascript,typescript",
-		"prefix": "dncla",
-		"body": [
-      "cy.get(${1:'<Enter a parent element selector here>'})",
-      "  .find(${2:'<Enter a child element selector here>'})",
-      "  .should('not.have.class', ${3:'<Enter class here>'})$0"
-    ],
-		"description": "Decendent of element should NOT have class"
-	},
-	"Decendent of element has attribute": {
-		"scope": "javascript,typescript",
-		"prefix": "datt",
-		"body": [
-      "cy.get(${1:'<Enter a parent element selector here>'})",
-      "  .find(${2:'<Enter a child element selector here>'})",
-      "  .should('have.attr', '${3:<Enter attribute name here>}', '${4:<Enter attribute value here>}')$0"
-    ],
-		"description": "Decendent of element should have attribute"
-	},
-	"Decendent of element does NOT have attribute": {
-		"scope": "javascript,typescript",
-		"prefix": "dnatt",
-		"body": [
-      "cy.get(${1:'<Enter a parent element selector here>'})",
-      "  .find(${2:'<Enter a child element selector here>'})",
-      "  .should('not.have.attr', '${3:<Enter attribute name here>}', '${4:<Enter attribute value here>}')$0"
-    ],
-		"description": "Decendent of element should NOT have attribute"
-	},
-	"Click decendent of element": {
+  
+	"Command: Click - decendent": {
 		"scope": "javascript,typescript",
 		"prefix": "dcli",
 		"body": [
       "cy.get(${1:'<Enter a parent element selector here>'})",
-      "  .find(${2:'<Enter a child element selector here>'}).click()$0"
+      "  .find(${2:'<Enter a child element selector here>'})",
+      "  .click()$0"
     ],
-		"description": "Click on decendent of element"
-	},
-	"Right click decendent element": {
+    "description": "Click on element - decendent"
+  },
+	"Command: Right click - decendent": {
 		"scope": "javascript,typescript",
 		"prefix": "drcli",
 		"body": [
       "cy.get(${1:'<Enter a parent element selector here>'})",
-      "  .find(${2:'<Enter a child element selector here>'}).rightClick()$0"
+      "  .find(${2:'<Enter a child element selector here>'})",
+      "  .rightClick()$0"
     ],
-		"description": "Right click on decendent element"
-	},
-	"Clear decendent of element": {
+    "description": "Right click on element - decendent"
+  },
+	"Command: Check - decendent": {
 		"scope": "javascript,typescript",
-		"prefix": "dcle",
+		"prefix": "dche",
 		"body": [
       "cy.get(${1:'<Enter a parent element selector here>'})",
-      "  .find(${2:'<Enter a child element selector here>'}).clear()$0"
+      "  .find(${2:'<Enter a child element selector here>'})",
+      "  .check()$0"
     ],
-		"description": "Clear current text in decendent of element"
-	},
-	"Type into decendent of element": {
+    "description": "Check checkbox - decendent"
+  },
+	"Command: Uncheck - decendent": {
+		"scope": "javascript,typescript",
+		"prefix": "duche",
+		"body": [
+      "cy.get(${1:'<Enter a parent element selector here>'})",
+      "  .find(${2:'<Enter a child element selector here>'})",
+      "  .uncheck()$0"
+    ],
+    "description": "Check checkbox - decendent"
+  },
+	"Command: Type text - decendent": {
 		"scope": "javascript,typescript",
 		"prefix": "dtyp",
 		"body": [
@@ -180,57 +64,242 @@
       "  .find(${2:'<Enter a child element selector here>'})",
       "  .type('${3:<Enter text here>}')$0"
     ],
-		"description": "Enter text into decendent of element"
-	},
-	// Example: cy.get(<selector>).invoke('text').should('match', /<regex>/)
-	"Invoke function on decendent of element": {
+    "description": "Enter text into element - decendent"
+  },
+	"Command: Clear - decendent": {
+		"scope": "javascript,typescript",
+		"prefix": "dcle",
+		"body": [
+      "cy.get(${1:'<Enter a parent element selector here>'})",
+      "  .find(${2:'<Enter a child element selector here>'})",
+      "  .clear()$0"
+    ],
+    "description": "Clear element text - decendent"
+  },
+	"Command: Invoke function - decendent": {
 		"scope": "javascript,typescript",
 		"prefix": "dinv",
 		"body": [
       "cy.get(${1:'<Enter a parent element selector here>'})",
       "  .find(${2:'<Enter a child element selector here>'})",
-      "  .invoke('${3:<Enter function name here>}')$0"
+      "  .invoke('${2:<Enter function name here>}')$0"
     ],
-		"description": "Invoke a function on an element decendent"
-	},
-	// This is used when the initial state of the element will be used during the test.
-	// It should only be used if the initial element state cannot be known until runtime.
-	// A common scenario is to make note of the current element, change something, then compare to the original state.
-	// Another example would be using the initial element state to predict a future element state.
-	"Get current element decendent state": {
+    "description": "Invoke a function on an element - decendent"
+  },
+  "Command: Log text to Cypress - decendent": {
 		"scope": "javascript,typescript",
-		"prefix": "dget",
+		"prefix": "dlog",
+		"body": [
+      "cy.get(${1:'<Enter a parent element selector here>'})",
+      "  .find(${2:'<Enter a child element selector here>'})",
+      "  .then(($element => {cy.log($element.text())}))$0"
+    ],
+    "description": "Write element text to the log - decendent"
+  },
+  "Command: Log value to Cypress - decendent": {
+		"scope": "javascript,typescript",
+		"prefix": "dlog",
+		"body": [
+      "cy.get(${1:'<Enter a parent element selector here>'})",
+      "  .find(${2:'<Enter a child element selector here>'})",
+      "  .then(($element => {cy.log($element.val())}))$0"
+    ],
+    "description": "Write element value to the log - decendent"
+  },
+	"Assert: Visible - decendent": {
+		"scope": "javascript,typescript",
+		"prefix": "dvis",
+		"body": [
+      "cy.get(${1:'<Enter a parent element selector here>'})",
+      "  .find(${2:'<Enter a child element selector here>'})",
+      "  .should('be.visible')$0"
+    ],
+    "description": "Assert that element is visible - decendent"
+  },
+	"Assert: NOT visible - decendent": {
+		"scope": "javascript,typescript",
+		"prefix": "dnvis",
+		"body": [
+      "cy.get(${1:'<Enter a parent element selector here>'})",
+      "  .find(${2:'<Enter a child element selector here>'})",
+      "  .should('not.be.visible')$0"
+    ],
+    "description": "Assert that element is NOT visible - decendent"
+  },
+	"Assert: Does NOT exist - decendent": {
+		"scope": "javascript,typescript",
+		"prefix": "dnexi",
+		"body": [
+      "cy.get(${1:'<Enter a parent element selector here>'})",
+      "  .find(${2:'<Enter a child element selector here>'})",
+      "  .should('not.exist')$0"
+    ],
+    "description": "Assert that element does NOT exist - decendent"
+  },
+	"Assert: Contains text (exact) - decendent": {
+		"scope": "javascript,typescript",
+		"prefix": "dcon",
+		"body": [
+      "cy.get(${1:'<Enter a parent element selector here>'})",
+      "  .find(${2:'<Enter a child element selector here>'})",
+      "  .should('contain', '${3:<Enter text here>}')$0"
+    ],
+    "description": "Assert that element contains text (exact) - decendent"
+  },
+	"Assert: Does NOT contain text (exact) - decendent": {
+		"scope": "javascript,typescript",
+		"prefix": "dncon",
+		"body": [
+      "cy.get(${1:'<Enter a parent element selector here>'})",
+      "  .find(${2:'<Enter a child element selector here>'})",
+      "  .should('not.contain', '${3:<Enter text here>}')$0"
+    ],
+    "description": "Assert that element does NOT contain text (exact) - decendent"
+  },
+	"Assert: Contains text (regex) - decendent": {
+		"scope": "javascript,typescript",
+		"prefix": "drcon",
+		"body": [
+      "cy.get(${1:'<Enter a parent element selector here>'})",
+      "  .find(${2:'<Enter a child element selector here>'})",
+      "  .invoke('text')",
+      "  .should('match', new RegExp (/${3:'<Enter regular expression here>'}/))$0"
+    ],
+  "description": "Assert that element contains text (regex) - decendent"
+  },
+	"Assert: Does NOT contain text (regex) - decendent": {
+		"scope": "javascript,typescript",
+		"prefix": "dnrcon",
+		"body": [
+      "cy.get(${1:'<Enter a parent element selector here>'})",
+      "  .find(${2:'<Enter a child element selector here>'})",
+      "  .invoke('text')",
+      "  .should('not.match', new RegExp (${3:'<Enter regular expression here>'}))$0"
+    ],
+  "description": "Assert that element does NOT contain text (regex) - decendent"
+  },
+	"Assert: Has value (exact) - decendent": {
+		"scope": "javascript,typescript",
+		"prefix": "dval",
+		"body": [
+      "cy.get(${1:'<Enter a parent element selector here>'})",
+      "  .find(${2:'<Enter a child element selector here>'})",
+      "  .should('have.value', '${3:<Enter text here>}')$0"
+    ],
+    "description": "Assert that element has value (exact) - decendent"
+  },
+	"Assert: Does NOT have value (exact) - decendent": {
+		"scope": "javascript,typescript",
+		"prefix": "dnval",
+		"body": [
+      "cy.get(${1:'<Enter a parent element selector here>'})",
+      "  .find(${2:'<Enter a child element selector here>'})",
+      "  .should('not.have.value', '${3:<Enter text here>}')$0"
+    ],
+    "description": "Assert that element does NOT have value (exact) - decendent"
+  },
+	"Assert: Has value (regex) - decendent": {
+		"scope": "javascript,typescript",
+		"prefix": "drval",
+		"body": [
+      "cy.get(${1:'<Enter a parent element selector here>'})",
+      "  .find(${2:'<Enter a child element selector here>'})",
+      "  .invoke('val')",
+      "  .should('match', new RegExp (/${3:'<Enter regular expression here>'}/))$0"
+    ],
+  "description": "Assert that element has value (regex) - decendent"
+  },
+	"Assert: Does NOT have value (regex) - decendent": {
+		"scope": "javascript,typescript",
+		"prefix": "dnrval",
+		"body": [
+      "cy.get(${1:'<Enter a parent element selector here>'})",
+      "  .find(${2:'<Enter a child element selector here>'})",
+      "  .invoke('val')",
+      "  .should('not.match', new RegExp (/${3:'<Enter regular expression here>'}/))$0"
+    ],
+  "description": "Assert that element does not have value (regex) - decendent"
+  },
+	"Assert: Text changed (after action) - decendent": {
+		"scope": "javascript,typescript",
+		"prefix": "dcha",
 		"body": [
       "cy.get(${1:'<Enter a parent element selector here>'})",
       "  .find(${2:'<Enter a child element selector here>'})",
       "  .then(($${3:enterNameOfElementHere} => {",
-			"    const ${4:enterNameOfElementPropertyHere} = $${3:enterNameOfElementHere}.text()",
-			"    ${5:// <Do something here to change the state of the element>}",
+			"    const INITIAL_${4:ENTER_NAME_OF_ELEMENT_HERE} = $${3:enterNameOfElementHere}.text()",
+			"    ${5:// <Do something here to change the element text>}",
       "    cy.get(${1:'<Enter a parent element selector here>'})",
       "      .find(${2:'<Enter a child element selector here>'})",
-      "      .should('not.contain', ${4:enterNameOfElementPropertyHere})$0 // <Get the element again, compare to the original element>",
-			"  }))"
-		],
-		"description": "Get element decendent, take an action, use previous element value in an assertion"
+      "      .should('not.contain', INITIAL_${4:ENTER_NAME_OF_ELEMENT_HERE})",
+			"  }))$0"
+    ],
+  "description": "Assert that element text changes after action - decendent"
   },
-  "Log element decendent text to Cypress": {
+	"Assert: Value changed (after action) - decendent": {
 		"scope": "javascript,typescript",
-		"prefix": "dlog",
+		"prefix": "dcha",
 		"body": [
       "cy.get(${1:'<Enter a parent element selector here>'})",
       "  .find(${2:'<Enter a child element selector here>'})",
-      "  .then(($element => {cy.log($element.text())}))"
+      "  .then(($${3:enterNameOfElementHere} => {",
+			"    const INITIAL_${4:ENTER_NAME_OF_ELEMENT_HERE} = $${3:enterNameOfElementHere}.val()",
+			"    ${5:// <Do something here to change the element value>}",
+      "    cy.get(${1:'<Enter a parent element selector here>'})",
+      "      .find(${2:'<Enter a child element selector here>'})",
+      "      .should('not.contain', INITIAL_${4:ENTER_NAME_OF_ELEMENT_HERE})",
+			"  }))$0"
     ],
-		"description": "Write an element's decendent text contents to the log"
+  "description": "Assert that element text changes after action - decendent"
   },
-  "Log element decendent value to Cypress": {
+	"Assert: Empty - decendent": {
 		"scope": "javascript,typescript",
-		"prefix": "dlog",
+		"prefix": "demp",
 		"body": [
       "cy.get(${1:'<Enter a parent element selector here>'})",
       "  .find(${2:'<Enter a child element selector here>'})",
-      "  .then(($element => {cy.log($element.val())}))"
+      "  .should('be.empty')$0"
     ],
-		"description": "Write an element's decendent value to the log"
-	}
+    "description": "Assert that element is empty - decendent"
+  },
+	"Assert: Has class - decendent": {
+		"scope": "javascript,typescript",
+		"prefix": "dcla",
+		"body": [
+      "cy.get(${1:'<Enter a parent element selector here>'})",
+      "  .find(${2:'<Enter a child element selector here>'})",
+      "  .should('have.class', ${3:'<Enter class here>'})$0"
+    ],
+    "description": "Assert that element has class - decendent"
+  },
+  "Assert: Does NOT have class - decendent": {
+		"scope": "javascript,typescript",
+		"prefix": "dncla",
+		"body": [
+      "cy.get(${1:'<Enter a parent element selector here>'})",
+      "  .find(${2:'<Enter a child element selector here>'})",
+      "  .should('not.have.class', ${3:'<Enter class here>'})$0"
+    ],
+    "description": "Assert that element does NOT have class - decendent"
+  },
+	"Assert: Has attribute - decendent": {
+		"scope": "javascript,typescript",
+		"prefix": "datt",
+		"body": [
+      "cy.get(${1:'<Enter a parent element selector here>'})",
+      "  .find(${2:'<Enter a child element selector here>'})",
+      "  .should('have.attr', '${3:<Enter attribute name here>}', '${4:<Enter attribute value here>}')$0"
+    ],
+    "description": "Assert that elment has attribute - decendent"
+  },
+	"Assert: Does NOT have attribute - decendent": {
+		"scope": "javascript,typescript",
+		"prefix": "dnatt",
+		"body": [
+      "cy.get(${1:'<Enter a parent element selector here>'})",
+      "  .find(${2:'<Enter a child element selector here>'})",
+      "  .should('not.have.attr', '${3:<Enter attribute name here>}', '${4:<Enter attribute value here>}')$0"
+    ],
+    "description": "Assert that element does NOT have attribute - decendent"
+  }
 }

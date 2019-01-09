@@ -14,142 +14,328 @@
 	// 		"$2"
 	// 	],
 	// 	"description": "Log output to console"
-	// }
-	"Element is visible": {
-		"scope": "javascript,typescript",
-		"prefix": "vis",
-		"body": "cy.get(${1:'<Enter an element selector here>'}).should('be.visible')$0",
-		"description": "Element should be visible"
-	},
-	"Element is NOT visible": {
-		"scope": "javascript,typescript",
-		"prefix": "nvis",
-		"body": "cy.get(${1:'<Enter an element selector here>'}).should('not.be.visible')$0",
-		"description": "Element should NOT be visible"
-	},
-	"Element exists": {
-		"scope": "javascript,typescript",
-		"prefix": "exi",
-		"body": "cy.get(${1:'<Enter an element selector here>'}).should('exist')$0",
-		"description": "Element should exist"
-	},
-	"Element does NOT exist": {
-		"scope": "javascript,typescript",
-		"prefix": "nexi",
-		"body": "cy.get(${1:'<Enter an element selector here>'}).should('not.exist')$0",
-		"description": "Element should NOT exist"
-	},
-	"Element contains": {
-		"scope": "javascript,typescript",
-		"prefix": "con",
-		"body": "cy.get(${1:'<Enter an element selector here>'}).should('contain', '${2:<Enter text here>}')$0",
-		"description": "Element should contain text"
-	},
-	"Element does NOT contain": {
-		"scope": "javascript,typescript",
-		"prefix": "ncon",
-		"body": "cy.get(${1:'<Enter an element selector here>'}).should('not.contain', '${2:<Enter text here>}')$0",
-		"description": "Element should NOT contain text"
-	},
-	"Element is empty": {
-		"scope": "javascript,typescript",
-		"prefix": "emp",
-		"body": "cy.get(${1:'<Enter an element selector here>'}).should('be.empty')$0",
-		"description": "Element should be empty"
-	},
-	"Element has value": {
-		"scope": "javascript,typescript",
-		"prefix": "val",
-		"body": "cy.get(${1:'<Enter an element selector here>'}).should('have.value', '${2:<Enter text here>}')$0",
-		"description": "Element should have value"
-	},
-	"Element does NOT have value": {
-		"scope": "javascript,typescript",
-		"prefix": "nval",
-		"body": "cy.get(${1:'<Enter an element selector here>'}).should('not.have.value', '${2:<Enter text here>}')$0",
-		"description": "Element should have value"
-	},
-	"Element has class": {
-		"scope": "javascript,typescript",
-		"prefix": "cla",
-		"body": "cy.get(${1:'<Enter an element selector here>'}).should('have.class', ${2:'<Enter class here>'})$0",
-		"description": "Element should have class"
-	},
-	"Element does NOT have class": {
-		"scope": "javascript,typescript",
-		"prefix": "ncla",
-		"body": "cy.get(${1:'<Enter an element selector here>'}).should('not.have.class', ${2:'<Enter class here>'})$0",
-		"description": "Element should NOT have class"
-	},
-	"Element has attribute": {
-		"scope": "javascript,typescript",
-		"prefix": "att",
-		"body": "cy.get(${1:'<Enter an element selector here>'}).should('have.attr', '${2:<Enter attribute name here>}', '${3:<Enter attribute value here>}')$0",
-		"description": "Element should have attribute"
-	},
-	"Element does NOT have attribute": {
-		"scope": "javascript,typescript",
-		"prefix": "natt",
-		"body": "cy.get(${1:'<Enter an element selector here>'}).should('not.have.attr', '${2:<Enter attribute name here>}', '${3:<Enter attribute value here>}')$0",
-		"description": "Element should NOT have attribute"
-	},
-	"Click element": {
+  // }
+  
+  // Usage: Use to interact with an element via left mouse click. Use check/uncheck for checkboxes
+  // instead of click.
+  // Example: cy.get(os.Layers_Dialog.Layers.Context_Menu.MOST_RECENT).click()
+  // Documentation: https://docs.cypress.io/api/commands/click.html
+	"Command: Click": {
 		"scope": "javascript,typescript",
 		"prefix": "cli",
 		"body": "cy.get(${1:'<Enter an element selector here>'}).click()$0",
 		"description": "Click on element"
-	},
-	"Right click element": {
+  },
+  
+  // Usage: Use to right click on an element.  Commonly used to open a context menu.
+  // Example: cy.get(os.Layers_Dialog.Areas.Tree.AREA_1).rightClick()
+  // Documentation: rightClick() is a custom command; not native to Cypress.  See commands.js.
+	"Command: Right click": {
 		"scope": "javascript,typescript",
 		"prefix": "rcli",
 		"body": "cy.get(${1:'<Enter an element selector here>'}).rightClick()$0",
 		"description": "Right click on element"
-	},
-	"Clear element": {
+  },
+  
+  // Usage: Use to check a checkbox.  Use this instead of click for checkboxes.
+  // Example: cy.get(os.Import_StateDialog.CLEAR_CHECKBOX).check()
+  // Documentation: https://docs.cypress.io/api/commands/check.html
+	"Command: Check": {
 		"scope": "javascript,typescript",
-		"prefix": "cle",
-		"body": "cy.get(${1:'<Enter an element selector here>'}).clear()$0",
-		"description": "Clear current text in element"
-	},
-	"Type into element": {
+		"prefix": "che",
+		"body": "cy.get(${1:'<Enter an element selector here>'}).check()$0",
+		"description": "Check checkbox"
+  },
+
+  // Usage: Use to uncheck a checkbox.  Use this instead of click or clear for checkboxes.
+  // Example: cy.get(os.Import_StateDialog.CLEAR_CHECKBOX).uncheck()
+  // Documentation: https://docs.cypress.io/api/commands/uncheck.html
+	"Command: Uncheck": {
+		"scope": "javascript,typescript",
+		"prefix": "uche",
+		"body": "cy.get(${1:'<Enter an element selector here>'}).uncheck()$0",
+		"description": "Check checkbox"
+  },
+  
+  // Usage: Use to enter text into an input or send a shortcut key to the application.  Some
+  // elements will require configuration before use, or during use.
+  // Example 1: cy.get(os.Add_Arc_Server_Dialog.TITLE_FIELD).type('Aurora ArcGIS Server')
+  // Example 2: cy.get(os.Map.CANVAS_3D).type('{shift}{rightarrow}')
+  // Documentation: https://docs.cypress.io/api/commands/type.html
+	"Command: Type text": {
 		"scope": "javascript,typescript",
 		"prefix": "typ",
 		"body": "cy.get(${1:'<Enter an element selector here>'}).type('${2:<Enter text here>}')$0",
 		"description": "Enter text into element"
 	},
-	// Example: cy.get(<selector>).invoke('text').should('match', /<regex>/)
-	"Invoke function on element": {
+
+  // Usage: Use to clear the value of an input or textarea.  Use uncheck for checkboxes instead.
+  // Example: cy.get(os.Toolbar.Search.FIELD).clear()
+  // Documentation: https://docs.cypress.io/api/commands/clear.html
+	"Command: Clear": {
+		"scope": "javascript,typescript",
+		"prefix": "cle",
+		"body": "cy.get(${1:'<Enter an element selector here>'}).clear()$0",
+		"description": "Clear element text"
+  },
+  
+  
+  // Usage: Use to invoke a function on an element.  Can obtain additional information about an
+  // element or to change the state of the application to aid in testing.
+  // Example 1: cy.get(os.Timeline.VIEW_WINDOW).invoke('position').should('not.equal', previousPosition)
+  // Example 2: cy.get(os.Map.CANVAS_3D).invoke('attr', 'contenteditable', true)
+  // Documentation: https://docs.cypress.io/api/commands/invoke.html
+	"Command: Invoke function": {
 		"scope": "javascript,typescript",
 		"prefix": "inv",
 		"body": "cy.get(${1:'<Enter an element selector here>'}).invoke('${2:<Enter function name here>}')$0",
 		"description": "Invoke a function on an element"
-	},
-	// This is used when the initial state of the element will be used during the test.
-	// It should only be used if the initial element state cannot be known until runtime.
-	// A common scenario is to make note of the current element, change something, then compare to the original state.
-	// Another example would be using the initial element state to predict a future element state.
-	"Get current element state": {
+  },
+
+  // Usage: Use to quickly log an element's text to Cypress during execution to aid in writing tests.
+  // Should not be left in tests.  Only for non-input elements.
+  // Example: cy.get(os.Layers_Dialog.Layers.Tree.LAYER_1).then((layer => {cy.log(layer.text())}))
+  // Documentation: https://docs.cypress.io/api/commands/log.html
+  "Command: Log text to Cypress": {
 		"scope": "javascript,typescript",
-		"prefix": "get",
+		"prefix": "log",
+		"body": "cy.get(${1:'<Enter an element selector here>'}).then(($element => {cy.log($element.text())}))$0",
+		"description": "Write element text to the log"
+  },
+
+  // Usage: Use to quickly log an element's value to Cypress during execution to aid in writing tests.
+  // Should not be left in tests. Only for input elements.
+  // Example: cy.get(os.Toolbar.Date.FIELD).then((date => {cy.log(date.val())}))
+  // Documentation: https://docs.cypress.io/api/commands/log.html
+  "Command: Log value to Cypress": {
+		"scope": "javascript,typescript",
+		"prefix": "log",
+		"body": "cy.get(${1:'<Enter an element selector here>'}).then(($element => {cy.log($element.val())}))$0",
+		"description": "Write element value to the log"
+	},
+
+  // Usage: Use to assert an element is visible.  This is preferred over asserting
+  // that an element exists.  (Element exists is a snippet that has been intentionally ommited)
+  // Example: cy.get(os.Layers_Dialog.Areas.SEARCH_FIELD).should('be.visible')
+  // Documentation: https://docs.cypress.io/guides/references/assertions.html
+	"Assert: Visible": {
+		"scope": "javascript,typescript",
+		"prefix": "vis",
+		"body": "cy.get(${1:'<Enter an element selector here>'}).should('be.visible')$0",
+		"description": "Assert that element is visible"
+  },
+  
+  // Usage: Inverse of previous.
+	"Assert: NOT visible": {
+		"scope": "javascript,typescript",
+		"prefix": "nvis",
+		"body": "cy.get(${1:'<Enter an element selector here>'}).should('not.be.visible')$0",
+		"description": "Assert that element is NOT visible"
+  },
+  
+  // Usage: Use to assert that an element does not exist.  This is preferred over asserting
+  // that an element is not visible.
+  // Example: cy.get(os.Toolbar.Add_Data.Dropdown.MENU).should('not.exist')
+  // Documentation: https://docs.cypress.io/guides/references/assertions.html
+	"Assert: Does NOT exist": {
+		"scope": "javascript,typescript",
+		"prefix": "nexi",
+		"body": "cy.get(${1:'<Enter an element selector here>'}).should('not.exist')$0",
+		"description": "Assert that element does NOT exist"
+  },
+  
+  // Usage: Use to assert that an element contains specific text.  Cannot be used for form inputs;
+  // use value instead for form inputs.  Matches on partial text but does not support wildcards;
+  // use regex instead for matching patterns instead of exact text.
+  // Example:cy.get(os.Layers_Dialog.Layers.Tree.LAYER_4)
+  //  .should('contain', 'load-data-file-test-features.geojson Features (291)')
+  // Documentation: https://docs.cypress.io/guides/references/assertions.html
+	"Assert: Contains text (exact)": {
+		"scope": "javascript,typescript",
+		"prefix": "con",
+		"body": "cy.get(${1:'<Enter an element selector here>'}).should('contain', '${2:<Enter text here>}')$0",
+		"description": "Assert that element contains text (exact)"
+  },
+
+  // Usage: Inverse of previous.
+	"Assert: Does NOT contain text (exact)": {
+		"scope": "javascript,typescript",
+		"prefix": "ncon",
+		"body": "cy.get(${1:'<Enter an element selector here>'}).should('not.contain', '${2:<Enter text here>}')$0",
+		"description": "Assert that element does NOT contain text (exact)"
+  },
+
+  // Usage: Use to assert that an element contains text matching a regular expression.  Use this 
+  // instead of contains when the exact text isn't known, but a pattern can be used
+  // to describe the expected behavior. Cannot be used for form inputs; use value regex
+  // instead for form inputs.
+  // Example: cy.get(os.Layers_Dialog.Layers.Tree.LAYER_4)
+  //            .invoke('text')
+  //            .should('match', new RegExp ('\\([0-9]\\d{0,3}\\/' + featureCount + '\\)'))
+  // Documentation: https://docs.cypress.io/guides/references/assertions.html
+	"Assert: Contains text (regex)": {
+		"scope": "javascript,typescript",
+		"prefix": "rcon",
+		"body": [
+      "cy.get(${1:'<Enter an element selector here>'})",
+      "  .invoke('text')",
+      "  .should('match', new RegExp (/${2:'<Enter regular expression here>'}/))$0"
+    ],
+		"description": "Assert that element contains text (regex)"
+  },
+
+  // Usage: Inverse of previous.
+	"Assert: Does NOT contain text (regex)": {
+		"scope": "javascript,typescript",
+		"prefix": "nrcon",
+		"body": [
+      "cy.get(${1:'<Enter an element selector here>'})",
+      "  .invoke('text')",
+      "  .should('not.match', new RegExp (${2:'<Enter regular expression here>'}))$0"
+    ],
+		"description": "Assert that element does NOT contain text (regex)"
+  },
+
+  // Usage: Use to assert that an element has a specific value.  Only used for form inputs (e.g.
+  // input, select, and textarea). Does NOT match on partial text, OR support wildcards; use
+  // regex instead for matching patterns instead of an exact value.
+  // Example: cy.get(os.Toolbar.Date.FIELD).should('have.value', Cypress.moment().format('YYYY[-]MM[-]DD'))
+  // Documentation: https://docs.cypress.io/guides/references/assertions.html
+	"Assert: Has value (exact)": {
+		"scope": "javascript,typescript",
+		"prefix": "val",
+		"body": "cy.get(${1:'<Enter an element selector here>'}).should('have.value', '${2:<Enter text here>}')$0",
+		"description": "Assert that element has value (exact)"
+  },
+
+  // Usage: Inverse of previous.
+	"Assert: Does NOT have value (exact)": {
+		"scope": "javascript,typescript",
+		"prefix": "nval",
+		"body": "cy.get(${1:'<Enter an element selector here>'}).should('not.have.value', '${2:<Enter text here>}')$0",
+		"description": "Assert that element does NOT have value (exact)"
+  },
+  
+  // Usage: Use to assert that an element has a value matching a regular expression.  Use this 
+  // instead of has value (exact) when the exact value isn't known, but a pattern can be used
+  // to describe the expected behavior. Only used for form inputs; use contains regex
+  // instead for non-form inputs.
+  // Example: cy.get(os.Layers_Dialog.Layers.Tree.LAYER_4)
+  //            .invoke('text')
+  //            .should('match', new RegExp ('\\([0-9]\\d{0,3}\\/' + featureCount + '\\)'))
+  // Documentation: https://docs.cypress.io/guides/references/assertions.html
+	"Assert: Has value (regex)": {
+		"scope": "javascript,typescript",
+		"prefix": "rval",
+		"body": [
+      "cy.get(${1:'<Enter an element selector here>'})",
+      "  .invoke('val')",
+      "  .should('match', new RegExp (/${2:'<Enter regular expression here>'}/))$0"
+    ],
+		"description": "Assert that element has value (regex)"
+  },
+
+  // Usage: Inverse of previous.
+	"Assert: Does NOT have value (regex)": {
+		"scope": "javascript,typescript",
+		"prefix": "nrval",
+		"body": [
+      "cy.get(${1:'<Enter an element selector here>'})",
+      "  .invoke('val')",
+      "  .should('not.match', new RegExp (/${2:'<Enter regular expression here>'}/))$0"
+    ],
+		"description": "Assert that element does not have value (regex)"
+  },
+
+  // Usage: Use when the initial text of the element will be used during the test, and the text
+  // cannot be known until runtime.  A common scenario is to make note of the current text, take
+  // an action that should result in a change to the text, then re-check the text.
+  // Example: cy.get(os.Status_bar.ZOOM).then(($zoom => {
+  //   const INITIAL_ZOOM = $zoom.text()
+  //   cy.get(os.Map.ZOOM_IN_BUTTON).click()
+  //   cy.get(os.Status_bar.ZOOM).should('not.contain', INITIAL_ZOOM)
+  // }))
+  // Documentation: https://docs.cypress.io/faq/questions/using-cypress-faq.html#How-do-I-get-an-element%E2%80%99s-text-contents
+	"Assert: Text changed (after action)": {
+		"scope": "javascript,typescript",
+		"prefix": "cha",
 		"body": [
 			"cy.get(${1:'<Enter an element selector here>'}).then(($${2:enterNameOfElementHere} => {",
-			"  const ${3:enterNameOfElementPropertyHere} = $${2:enterNameOfElementHere}.text()",
-			"  ${4:// <Do something here to change the state of the element>}",
-			"  cy.get(${1:'<Enter an element selector here>'}).should('not.contain', ${3:enterNameOfElementPropertyHere})${0: // <Get the element again, compare to the original element>}",
-			"}))"
+			"  const INITIAL_${3:ENTER_NAME_OF_ELEMENT_HERE} = $${2:enterNameOfElementHere}.text()",
+			"  ${4:// <Do something here to change the element text>}",
+			"  cy.get(${1:'<Enter an element selector here>'}).should('not.contain', INITIAL_${3:ENTER_NAME_OF_ELEMENT_HERE})",
+			"}))$0"
 		],
-		"description": "Get element, take an action, use previous element value in an assertion"
+		"description": "Assert that element text changes after action"
   },
-  "Log element text to Cypress": {
+
+  // Usage: Use when the initial value of the element will be used during the test, and the text
+  // cannot be known until runtime.  A common scenario is to make note of the current value, take
+  // an action that should result in a change to the value, then re-check the value.
+  // Example: cy.get(os.Toolbar.Date.FIELD).then(($date => {
+  //   const INITIAL_DATE = $date.val()
+  //   cy.get(os.Toolbar.NEXT_DAY_BUTTON).click()
+  //   cy.get(os.Toolbar.Date.FIELD).should('not.contain', INITIAL_DATE)
+  // }))
+  // Documentation: https://docs.cypress.io/faq/questions/using-cypress-faq.html#How-do-I-get-an-element%E2%80%99s-text-contents
+	"Assert: Value changed (after action)": {
 		"scope": "javascript,typescript",
-		"prefix": "log",
-		"body": "cy.get(${1:'<Enter an element selector here>'}).then(($element => {cy.log($element.text())}))",
-		"description": "Write an element's text contents to the log"
+		"prefix": "cha",
+		"body": [
+			"cy.get(${1:'<Enter an element selector here>'}).then(($${2:enterNameOfElementHere} => {",
+			"  const INITIAL_${3:ENTER_NAME_OF_ELEMENT_HERE} = $${2:enterNameOfElementHere}.val()",
+			"  ${4:// <Do something here to change the element value>}",
+			"  cy.get(${1:'<Enter an element selector here>'}).should('not.contain', INITIAL_${3:ENTER_NAME_OF_ELEMENT_HERE})",
+			"}))$0"
+		],
+		"description": "Assert that element text changes after action"
   },
-  "Log element value to Cypress": {
+  
+  // Usage: Use to assert than an element does not contain text.
+  // Example: cy.get(os.Toolbar.Search.FIELD).should('be.empty')
+  // Documentation: https://docs.cypress.io/guides/references/assertions.html
+	"Assert: Empty": {
 		"scope": "javascript,typescript",
-		"prefix": "log",
-		"body": "cy.get(${1:'<Enter an element selector here>'}).then(($element => {cy.log($element.val())}))",
-		"description": "Write an element's value to the log"
-	}
+		"prefix": "emp",
+		"body": "cy.get(${1:'<Enter an element selector here>'}).should('be.empty')$0",
+		"description": "Assert that element is empty"
+  },
+  
+  // Usage: Use to assert than an element has a class.  Commonly used to assert on the state
+  // of an element (e.g. on/off).
+  // Example: cy.get(os.Status_bar.Mute.BUTTON).should('have.class', os.Status_bar.Mute.SOUND_ON)
+  // Documentation: https://docs.cypress.io/guides/references/assertions.html
+	"Assert: Has class": {
+		"scope": "javascript,typescript",
+		"prefix": "cla",
+		"body": "cy.get(${1:'<Enter an element selector here>'}).should('have.class', ${2:'<Enter class here>'})$0",
+		"description": "Assert that element has class"
+  },
+  
+  // Usage: Inverse of previous.
+	"Assert: Does NOT have class": {
+		"scope": "javascript,typescript",
+		"prefix": "ncla",
+		"body": "cy.get(${1:'<Enter an element selector here>'}).should('not.have.class', ${2:'<Enter class here>'})$0",
+		"description": "Assert that element does NOT have class"
+  },
+  
+  // Usage: Use to assert that an element has an attribute.  Commonly used to assert on some
+  // property of the element.
+  // Example: cy.get(os.Map.ROTATION_BUTTON).should('have.attr', 'style', 'transform: rotate(6.28319rad);')
+  // Documentation: https://docs.cypress.io/guides/references/assertions.html
+	"Assert: Has attribute": {
+		"scope": "javascript,typescript",
+		"prefix": "att",
+		"body": "cy.get(${1:'<Enter an element selector here>'}).should('have.attr', '${2:<Enter attribute name here>}', '${3:<Enter attribute value here>}')$0",
+		"description": "Assert that elment has attribute"
+  },
+  
+  // Usage: Inverse of previous.
+	"Assert: Does NOT have attribute": {
+		"scope": "javascript,typescript",
+		"prefix": "natt",
+		"body": "cy.get(${1:'<Enter an element selector here>'}).should('not.have.attr', '${2:<Enter attribute name here>}', '${3:<Enter attribute value here>}')$0",
+		"description": "Assert that element does NOT have attribute"
+  }
 }
