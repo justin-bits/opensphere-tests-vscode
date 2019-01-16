@@ -1,4 +1,13 @@
 {
+  "explorer.confirmDelete": false,
+  "workbench.editor.closeOnFileDelete": true,
+  "files.autoSave": "off",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "editor.rulers": [
+    100
+  ],
+  "editor.detectIndentation": false,
+  "editor.tabSize": 2,
   "json.schemas": [
     {
       "fileMatch": [
