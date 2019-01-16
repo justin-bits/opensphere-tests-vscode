@@ -23,7 +23,7 @@
             "",
             "describe('${1:<Enter top level test description here>}', function () {",
             "",
-            "  before('Open opensphere', function () {",
+            "  before('Login', function () {",
             "    cy.login()",
             "  })",
             "",
@@ -69,7 +69,7 @@
 		"scope": "javascript,typescript",
 		"prefix": "it",
 		"body": [
-            "it('should ${1:<enter test description here}', function () {",
+            "it('${1:<enter test description here}', function () {",
             "  // Setup",
             "  ${2:// <Enter setup steps here>}",
             "",
