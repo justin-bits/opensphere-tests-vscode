@@ -1,4 +1,4 @@
-# cypress-vscode-snippets
+# opensphere-tests-vscode
 Code snippets for use with Visual Studio code when writing tests in Cypress.  These snippets are written for direct use with [opensphere-tests](https://github.com/justin-bits/opensphere-tests).
 
 ## Features
@@ -14,5 +14,5 @@ Adds snippets for...
   
 2. Clone this repository directly to the .vscode folder in the project.  Snippets must ***not*** be located in a subfolder to .vscode; if they are they won't work. 
 
-        git clone https://github.com/justin-bits/cypress-vscode-snippets.git .
+        git clone https://github.com/justin-bits/opensphere-tests-vscode.git .
 
