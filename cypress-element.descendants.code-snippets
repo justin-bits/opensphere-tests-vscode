@@ -16,7 +16,7 @@
 	// 	"description": "Log output to console"
 	// }
   
-	"Command: Click - decendent": {
+	"Command: Click - descendant": {
 		"scope": "javascript,typescript",
 		"prefix": "dcli",
 		"body": [
@@ -24,9 +24,9 @@
       "  .find(${2:'<Enter a child element selector here>'})",
       "  .click()$0"
     ],
-    "description": "Click on element - decendent"
+    "description": "Click on element - descendant"
   },
-	"Command: Right click - decendent": {
+	"Command: Right click - descendant": {
 		"scope": "javascript,typescript",
 		"prefix": "drcli",
 		"body": [
@@ -34,9 +34,9 @@
       "  .find(${2:'<Enter a child element selector here>'})",
       "  .rightClick()$0"
     ],
-    "description": "Right click on element - decendent"
+    "description": "Right click on element - descendant"
   },
-	"Command: Check - decendent": {
+	"Command: Check - descendant": {
 		"scope": "javascript,typescript",
 		"prefix": "dche",
 		"body": [
@@ -44,9 +44,9 @@
       "  .find(${2:'<Enter a child element selector here>'})",
       "  .check()$0"
     ],
-    "description": "Check checkbox - decendent"
+    "description": "Check checkbox - descendant"
   },
-	"Command: Uncheck - decendent": {
+	"Command: Uncheck - descendant": {
 		"scope": "javascript,typescript",
 		"prefix": "duche",
 		"body": [
@@ -54,9 +54,9 @@
       "  .find(${2:'<Enter a child element selector here>'})",
       "  .uncheck()$0"
     ],
-    "description": "Check checkbox - decendent"
+    "description": "Check checkbox - descendant"
   },
-	"Command: Type text - decendent": {
+	"Command: Type text - descendant": {
 		"scope": "javascript,typescript",
 		"prefix": "dtyp",
 		"body": [
@@ -64,9 +64,9 @@
       "  .find(${2:'<Enter a child element selector here>'})",
       "  .type('${3:<Enter text here>}')$0"
     ],
-    "description": "Enter text into element - decendent"
+    "description": "Enter text into element - descendant"
   },
-	"Command: Clear - decendent": {
+	"Command: Clear - descendant": {
 		"scope": "javascript,typescript",
 		"prefix": "dcle",
 		"body": [
@@ -74,9 +74,9 @@
       "  .find(${2:'<Enter a child element selector here>'})",
       "  .clear()$0"
     ],
-    "description": "Clear element text - decendent"
+    "description": "Clear element text - descendant"
   },
-	"Command: Invoke function - decendent": {
+	"Command: Invoke function - descendant": {
 		"scope": "javascript,typescript",
 		"prefix": "dinv",
 		"body": [
@@ -84,9 +84,9 @@
       "  .find(${2:'<Enter a child element selector here>'})",
       "  .invoke('${2:<Enter function name here>}')$0"
     ],
-    "description": "Invoke a function on an element - decendent"
+    "description": "Invoke a function on an element - descendant"
   },
-  "Command: Log text to Cypress - decendent": {
+  "Command: Log text to Cypress - descendant": {
 		"scope": "javascript,typescript",
 		"prefix": "dlog",
 		"body": [
@@ -94,9 +94,9 @@
       "  .find(${2:'<Enter a child element selector here>'})",
       "  .then(($element => {cy.log($element.text())}))$0"
     ],
-    "description": "Write element text to the log - decendent"
+    "description": "Write element text to the log - descendant"
   },
-  "Command: Log value to Cypress - decendent": {
+  "Command: Log value to Cypress - descendant": {
 		"scope": "javascript,typescript",
 		"prefix": "dlog",
 		"body": [
@@ -104,9 +104,9 @@
       "  .find(${2:'<Enter a child element selector here>'})",
       "  .then(($element => {cy.log($element.val())}))$0"
     ],
-    "description": "Write element value to the log - decendent"
+    "description": "Write element value to the log - descendant"
   },
-	"Assert: Visible - decendent": {
+	"Assert: Visible - descendant": {
 		"scope": "javascript,typescript",
 		"prefix": "dvis",
 		"body": [
@@ -114,9 +114,9 @@
       "  .find(${2:'<Enter a child element selector here>'})",
       "  .should('be.visible')$0"
     ],
-    "description": "Assert that element is visible - decendent"
+    "description": "Assert that element is visible - descendant"
   },
-	"Assert: NOT visible - decendent": {
+	"Assert: NOT visible - descendant": {
 		"scope": "javascript,typescript",
 		"prefix": "dnvis",
 		"body": [
@@ -124,9 +124,9 @@
       "  .find(${2:'<Enter a child element selector here>'})",
       "  .should('not.be.visible')$0"
     ],
-    "description": "Assert that element is NOT visible - decendent"
+    "description": "Assert that element is NOT visible - descendant"
   },
-	"Assert: Does NOT exist - decendent": {
+	"Assert: Does NOT exist - descendant": {
 		"scope": "javascript,typescript",
 		"prefix": "dnexi",
 		"body": [
@@ -134,9 +134,9 @@
       "  .find(${2:'<Enter a child element selector here>'})",
       "  .should('not.exist')$0"
     ],
-    "description": "Assert that element does NOT exist - decendent"
+    "description": "Assert that element does NOT exist - descendant"
   },
-	"Assert: Contains text (exact) - decendent": {
+	"Assert: Contains text (exact) - descendant": {
 		"scope": "javascript,typescript",
 		"prefix": "dcon",
 		"body": [
@@ -144,9 +144,9 @@
       "  .find(${2:'<Enter a child element selector here>'})",
       "  .should('contain', '${3:<Enter text here>}')$0"
     ],
-    "description": "Assert that element contains text (exact) - decendent"
+    "description": "Assert that element contains text (exact) - descendant"
   },
-	"Assert: Does NOT contain text (exact) - decendent": {
+	"Assert: Does NOT contain text (exact) - descendant": {
 		"scope": "javascript,typescript",
 		"prefix": "dncon",
 		"body": [
@@ -154,9 +154,9 @@
       "  .find(${2:'<Enter a child element selector here>'})",
       "  .should('not.contain', '${3:<Enter text here>}')$0"
     ],
-    "description": "Assert that element does NOT contain text (exact) - decendent"
+    "description": "Assert that element does NOT contain text (exact) - descendant"
   },
-	"Assert: Contains text (regex) - decendent": {
+	"Assert: Contains text (regex) - descendant": {
 		"scope": "javascript,typescript",
 		"prefix": "drcon",
 		"body": [
@@ -165,9 +165,9 @@
       "  .invoke('text')",
       "  .should('match', new RegExp (/${3:'<Enter regular expression here>'}/))$0"
     ],
-  "description": "Assert that element contains text (regex) - decendent"
+  "description": "Assert that element contains text (regex) - descendant"
   },
-	"Assert: Does NOT contain text (regex) - decendent": {
+	"Assert: Does NOT contain text (regex) - descendant": {
 		"scope": "javascript,typescript",
 		"prefix": "dnrcon",
 		"body": [
@@ -176,9 +176,9 @@
       "  .invoke('text')",
       "  .should('not.match', new RegExp (${3:'<Enter regular expression here>'}))$0"
     ],
-  "description": "Assert that element does NOT contain text (regex) - decendent"
+  "description": "Assert that element does NOT contain text (regex) - descendant"
   },
-	"Assert: Has value (exact) - decendent": {
+	"Assert: Has value (exact) - descendant": {
 		"scope": "javascript,typescript",
 		"prefix": "dval",
 		"body": [
@@ -186,9 +186,9 @@
       "  .find(${2:'<Enter a child element selector here>'})",
       "  .should('have.value', '${3:<Enter text here>}')$0"
     ],
-    "description": "Assert that element has value (exact) - decendent"
+    "description": "Assert that element has value (exact) - descendant"
   },
-	"Assert: Does NOT have value (exact) - decendent": {
+	"Assert: Does NOT have value (exact) - descendant": {
 		"scope": "javascript,typescript",
 		"prefix": "dnval",
 		"body": [
@@ -196,9 +196,9 @@
       "  .find(${2:'<Enter a child element selector here>'})",
       "  .should('not.have.value', '${3:<Enter text here>}')$0"
     ],
-    "description": "Assert that element does NOT have value (exact) - decendent"
+    "description": "Assert that element does NOT have value (exact) - descendant"
   },
-	"Assert: Has value (regex) - decendent": {
+	"Assert: Has value (regex) - descendant": {
 		"scope": "javascript,typescript",
 		"prefix": "drval",
 		"body": [
@@ -207,9 +207,9 @@
       "  .invoke('val')",
       "  .should('match', new RegExp (/${3:'<Enter regular expression here>'}/))$0"
     ],
-  "description": "Assert that element has value (regex) - decendent"
+  "description": "Assert that element has value (regex) - descendant"
   },
-	"Assert: Does NOT have value (regex) - decendent": {
+	"Assert: Does NOT have value (regex) - descendant": {
 		"scope": "javascript,typescript",
 		"prefix": "dnrval",
 		"body": [
@@ -218,9 +218,9 @@
       "  .invoke('val')",
       "  .should('not.match', new RegExp (/${3:'<Enter regular expression here>'}/))$0"
     ],
-  "description": "Assert that element does not have value (regex) - decendent"
+  "description": "Assert that element does not have value (regex) - descendant"
   },
-	"Assert: Text changed (after action) - decendent": {
+	"Assert: Text changed (after action) - descendant": {
 		"scope": "javascript,typescript",
 		"prefix": "dcha",
 		"body": [
@@ -234,9 +234,9 @@
       "      .should('not.contain', INITIAL_${4:ENTER_NAME_OF_ELEMENT_HERE})",
 			"  }))$0"
     ],
-  "description": "Assert that element text changes after action - decendent"
+  "description": "Assert that element text changes after action - descendant"
   },
-	"Assert: Value changed (after action) - decendent": {
+	"Assert: Value changed (after action) - descendant": {
 		"scope": "javascript,typescript",
 		"prefix": "dcha",
 		"body": [
@@ -250,9 +250,9 @@
       "      .should('not.contain', INITIAL_${4:ENTER_NAME_OF_ELEMENT_HERE})",
 			"  }))$0"
     ],
-  "description": "Assert that element text changes after action - decendent"
+  "description": "Assert that element text changes after action - descendant"
   },
-	"Assert: Empty - decendent": {
+	"Assert: Empty - descendant": {
 		"scope": "javascript,typescript",
 		"prefix": "demp",
 		"body": [
@@ -260,9 +260,9 @@
       "  .find(${2:'<Enter a child element selector here>'})",
       "  .should('be.empty')$0"
     ],
-    "description": "Assert that element is empty - decendent"
+    "description": "Assert that element is empty - descendant"
   },
-	"Assert: Has class - decendent": {
+	"Assert: Has class - descendant": {
 		"scope": "javascript,typescript",
 		"prefix": "dcla",
 		"body": [
@@ -270,9 +270,9 @@
       "  .find(${2:'<Enter a child element selector here>'})",
       "  .should('have.class', ${3:'<Enter class here>'})$0"
     ],
-    "description": "Assert that element has class - decendent"
+    "description": "Assert that element has class - descendant"
   },
-  "Assert: Does NOT have class - decendent": {
+  "Assert: Does NOT have class - descendant": {
 		"scope": "javascript,typescript",
 		"prefix": "dncla",
 		"body": [
@@ -280,9 +280,9 @@
       "  .find(${2:'<Enter a child element selector here>'})",
       "  .should('not.have.class', ${3:'<Enter class here>'})$0"
     ],
-    "description": "Assert that element does NOT have class - decendent"
+    "description": "Assert that element does NOT have class - descendant"
   },
-	"Assert: Has attribute - decendent": {
+	"Assert: Has attribute - descendant": {
 		"scope": "javascript,typescript",
 		"prefix": "datt",
 		"body": [
@@ -290,9 +290,9 @@
       "  .find(${2:'<Enter a child element selector here>'})",
       "  .should('have.attr', '${3:<Enter attribute name here>}', '${4:<Enter attribute value here>}')$0"
     ],
-    "description": "Assert that elment has attribute - decendent"
+    "description": "Assert that elment has attribute - descendant"
   },
-	"Assert: Does NOT have attribute - decendent": {
+	"Assert: Does NOT have attribute - descendant": {
 		"scope": "javascript,typescript",
 		"prefix": "dnatt",
 		"body": [
@@ -300,6 +300,6 @@
       "  .find(${2:'<Enter a child element selector here>'})",
       "  .should('not.have.attr', '${3:<Enter attribute name here>}', '${4:<Enter attribute value here>}')$0"
     ],
-    "description": "Assert that element does NOT have attribute - decendent"
+    "description": "Assert that element does NOT have attribute - descendant"
   }
 }

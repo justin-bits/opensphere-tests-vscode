@@ -4,7 +4,7 @@ Code snippets for use with Visual Studio code when writing tests in Cypress.  Th
 ## Features
 Adds snippets for...
 * New spec files
-* Working with elements, and decendents of elements
+* Working with elements, and descendants of elements
 * Error handling
 
 Adds settings for...
