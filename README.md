@@ -9,6 +9,8 @@ Adds snippets for...
 
 Adds settings for...
 * ```cypress.json``` intelligent code completion
+* File move, save, and delete behavior
+* Tabs, spaces, and ruler
 
 ## Installation
 1. Ensure the .vscode folder exists at the root of the project. Note that the .vscode folder is hidden and may need to be created. ```\opensphere-tests\.vscode```
