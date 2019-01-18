@@ -19,6 +19,7 @@
 		"scope": "javascript,typescript",
 		"prefix": "spec",
 		"body": [
+            "/// <reference types=\"Cypress\" />",
             "var os = require('../../support/selectors.js')",
             "",
             "describe('${1:<Enter top level test description here>}', function () {",
