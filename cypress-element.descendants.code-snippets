@@ -21,8 +21,8 @@
 		"prefix": "dcli",
 		"body": [
       "cy.get(${1:'<Enter a parent element selector here>'})",
-      "  .find(${2:'<Enter a child element selector here>'})",
-      "  .click()$0"
+      "    .find(${2:'<Enter a child element selector here>'})",
+      "    .click();$0"
     ],
     "description": "Click on element - descendant"
   },
@@ -31,8 +31,8 @@
 		"prefix": "drcli",
 		"body": [
       "cy.get(${1:'<Enter a parent element selector here>'})",
-      "  .find(${2:'<Enter a child element selector here>'})",
-      "  .rightClick()$0"
+      "    .find(${2:'<Enter a child element selector here>'})",
+      "    .rightClick();$0"
     ],
     "description": "Right click on element - descendant"
   },
@@ -41,8 +41,8 @@
 		"prefix": "dche",
 		"body": [
       "cy.get(${1:'<Enter a parent element selector here>'})",
-      "  .find(${2:'<Enter a child element selector here>'})",
-      "  .check()$0"
+      "    .find(${2:'<Enter a child element selector here>'})",
+      "    .check();$0"
     ],
     "description": "Check checkbox - descendant"
   },
@@ -51,8 +51,8 @@
 		"prefix": "duche",
 		"body": [
       "cy.get(${1:'<Enter a parent element selector here>'})",
-      "  .find(${2:'<Enter a child element selector here>'})",
-      "  .uncheck()$0"
+      "    .find(${2:'<Enter a child element selector here>'})",
+      "    .uncheck();$0"
     ],
     "description": "Check checkbox - descendant"
   },
@@ -61,8 +61,8 @@
 		"prefix": "dtyp",
 		"body": [
       "cy.get(${1:'<Enter a parent element selector here>'})",
-      "  .find(${2:'<Enter a child element selector here>'})",
-      "  .type('${3:<Enter text here>}')$0"
+      "    .find(${2:'<Enter a child element selector here>'})",
+      "    .type('${3:<Enter text here>}');$0"
     ],
     "description": "Enter text into element - descendant"
   },
@@ -71,8 +71,8 @@
 		"prefix": "dcle",
 		"body": [
       "cy.get(${1:'<Enter a parent element selector here>'})",
-      "  .find(${2:'<Enter a child element selector here>'})",
-      "  .clear()$0"
+      "    .find(${2:'<Enter a child element selector here>'})",
+      "    .clear();$0"
     ],
     "description": "Clear element text - descendant"
   },
@@ -81,8 +81,8 @@
 		"prefix": "dinv",
 		"body": [
       "cy.get(${1:'<Enter a parent element selector here>'})",
-      "  .find(${2:'<Enter a child element selector here>'})",
-      "  .invoke('${2:<Enter function name here>}')$0"
+      "    .find(${2:'<Enter a child element selector here>'})",
+      "    .invoke('${2:<Enter function name here>}');$0"
     ],
     "description": "Invoke a function on an element - descendant"
   },
@@ -91,8 +91,10 @@
 		"prefix": "dlog",
 		"body": [
       "cy.get(${1:'<Enter a parent element selector here>'})",
-      "  .find(${2:'<Enter a child element selector here>'})",
-      "  .then(($element => {cy.log($element.text())}))$0"
+      "    .find(${2:'<Enter a child element selector here>'})",
+      "    .then(($element) => {",
+      "      cy.log($element.text());",
+      "    });$0",
     ],
     "description": "Write element text to the log - descendant"
   },
@@ -101,8 +103,10 @@
 		"prefix": "dlog",
 		"body": [
       "cy.get(${1:'<Enter a parent element selector here>'})",
-      "  .find(${2:'<Enter a child element selector here>'})",
-      "  .then(($element => {cy.log($element.val())}))$0"
+      "    .find(${2:'<Enter a child element selector here>'})",
+      "    .then(($element) => {",
+      "      cy.log($element.val());",
+      "    });$0",
     ],
     "description": "Write element value to the log - descendant"
   },
@@ -111,8 +115,8 @@
 		"prefix": "dvis",
 		"body": [
       "cy.get(${1:'<Enter a parent element selector here>'})",
-      "  .find(${2:'<Enter a child element selector here>'})",
-      "  .should('be.visible')$0"
+      "    .find(${2:'<Enter a child element selector here>'})",
+      "    .should('be.visible');$0"
     ],
     "description": "Assert that element is visible - descendant"
   },
@@ -121,8 +125,8 @@
 		"prefix": "dnvis",
 		"body": [
       "cy.get(${1:'<Enter a parent element selector here>'})",
-      "  .find(${2:'<Enter a child element selector here>'})",
-      "  .should('not.be.visible')$0"
+      "    .find(${2:'<Enter a child element selector here>'})",
+      "    .should('not.be.visible');$0"
     ],
     "description": "Assert that element is NOT visible - descendant"
   },
@@ -131,8 +135,8 @@
 		"prefix": "dnexi",
 		"body": [
       "cy.get(${1:'<Enter a parent element selector here>'})",
-      "  .find(${2:'<Enter a child element selector here>'})",
-      "  .should('not.exist')$0"
+      "    .find(${2:'<Enter a child element selector here>'})",
+      "    .should('not.exist');$0"
     ],
     "description": "Assert that element does NOT exist - descendant"
   },
@@ -141,8 +145,8 @@
 		"prefix": "dcon",
 		"body": [
       "cy.get(${1:'<Enter a parent element selector here>'})",
-      "  .find(${2:'<Enter a child element selector here>'})",
-      "  .should('contain', '${3:<Enter text here>}')$0"
+      "    .find(${2:'<Enter a child element selector here>'})",
+      "    .should('contain', '${3:<Enter text here>}');$0"
     ],
     "description": "Assert that element contains text (exact) - descendant"
   },
@@ -151,8 +155,8 @@
 		"prefix": "dncon",
 		"body": [
       "cy.get(${1:'<Enter a parent element selector here>'})",
-      "  .find(${2:'<Enter a child element selector here>'})",
-      "  .should('not.contain', '${3:<Enter text here>}')$0"
+      "    .find(${2:'<Enter a child element selector here>'})",
+      "    .should('not.contain', '${3:<Enter text here>}');$0"
     ],
     "description": "Assert that element does NOT contain text (exact) - descendant"
   },
@@ -161,9 +165,9 @@
 		"prefix": "drcon",
 		"body": [
       "cy.get(${1:'<Enter a parent element selector here>'})",
-      "  .find(${2:'<Enter a child element selector here>'})",
-      "  .invoke('text')",
-      "  .should('match', new RegExp (/${3:'<Enter regular expression here>'}/))$0"
+      "    .find(${2:'<Enter a child element selector here>'})",
+      "    .invoke('text')",
+      "    .should('match', new RegExp(/${3:'<Enter regular expression here>'}/));$0"
     ],
   "description": "Assert that element contains text (regex) - descendant"
   },
@@ -172,9 +176,9 @@
 		"prefix": "dnrcon",
 		"body": [
       "cy.get(${1:'<Enter a parent element selector here>'})",
-      "  .find(${2:'<Enter a child element selector here>'})",
-      "  .invoke('text')",
-      "  .should('not.match', new RegExp (${3:'<Enter regular expression here>'}))$0"
+      "    .find(${2:'<Enter a child element selector here>'})",
+      "    .invoke('text')",
+      "    .should('not.match', new RegExp(${3:'<Enter regular expression here>'}));$0"
     ],
   "description": "Assert that element does NOT contain text (regex) - descendant"
   },
@@ -183,8 +187,8 @@
 		"prefix": "dval",
 		"body": [
       "cy.get(${1:'<Enter a parent element selector here>'})",
-      "  .find(${2:'<Enter a child element selector here>'})",
-      "  .should('have.value', '${3:<Enter text here>}')$0"
+      "    .find(${2:'<Enter a child element selector here>'})",
+      "    .should('have.value', '${3:<Enter text here>}');$0"
     ],
     "description": "Assert that element has value (exact) - descendant"
   },
@@ -193,8 +197,8 @@
 		"prefix": "dnval",
 		"body": [
       "cy.get(${1:'<Enter a parent element selector here>'})",
-      "  .find(${2:'<Enter a child element selector here>'})",
-      "  .should('not.have.value', '${3:<Enter text here>}')$0"
+      "    .find(${2:'<Enter a child element selector here>'})",
+      "    .should('not.have.value', '${3:<Enter text here>}');$0"
     ],
     "description": "Assert that element does NOT have value (exact) - descendant"
   },
@@ -203,9 +207,9 @@
 		"prefix": "drval",
 		"body": [
       "cy.get(${1:'<Enter a parent element selector here>'})",
-      "  .find(${2:'<Enter a child element selector here>'})",
-      "  .invoke('val')",
-      "  .should('match', new RegExp (/${3:'<Enter regular expression here>'}/))$0"
+      "    .find(${2:'<Enter a child element selector here>'})",
+      "    .invoke('val')",
+      "    .should('match', new RegExp(/${3:'<Enter regular expression here>'}/));$0"
     ],
   "description": "Assert that element has value (regex) - descendant"
   },
@@ -214,9 +218,9 @@
 		"prefix": "dnrval",
 		"body": [
       "cy.get(${1:'<Enter a parent element selector here>'})",
-      "  .find(${2:'<Enter a child element selector here>'})",
-      "  .invoke('val')",
-      "  .should('not.match', new RegExp (/${3:'<Enter regular expression here>'}/))$0"
+      "    .find(${2:'<Enter a child element selector here>'})",
+      "    .invoke('val')",
+      "    .should('not.match', new RegExp(/${3:'<Enter regular expression here>'}/));$0"
     ],
   "description": "Assert that element does not have value (regex) - descendant"
   },
@@ -225,14 +229,14 @@
 		"prefix": "dcha",
 		"body": [
       "cy.get(${1:'<Enter a parent element selector here>'})",
-      "  .find(${2:'<Enter a child element selector here>'})",
-      "  .then(($${3:enterNameOfElementHere} => {",
-			"    const INITIAL_${4:ENTER_NAME_OF_ELEMENT_HERE} = $${3:enterNameOfElementHere}.text()",
-			"    ${5:// <Do something here to change the element text>}",
-      "    cy.get(${1:'<Enter a parent element selector here>'})",
-      "      .find(${2:'<Enter a child element selector here>'})",
-      "      .should('not.contain', INITIAL_${4:ENTER_NAME_OF_ELEMENT_HERE})",
-			"  }))$0"
+      "    .find(${2:'<Enter a child element selector here>'})",
+      "    .then(($${3:enterNameOfElementHere}) => {",
+			"      const INITIAL_${4:ENTER_NAME_OF_ELEMENT_HERE} = $${3:enterNameOfElementHere}.text();",
+			"      ${5:// <Do something here to change the element text>}",
+      "      cy.get(${1:'<Enter a parent element selector here>'})",
+      "          .find(${2:'<Enter a child element selector here>'})",
+      "          .should('not.contain', INITIAL_${4:ENTER_NAME_OF_ELEMENT_HERE});",
+			"    });$0"
     ],
   "description": "Assert that element text changes after action - descendant"
   },
@@ -241,14 +245,14 @@
 		"prefix": "dcha",
 		"body": [
       "cy.get(${1:'<Enter a parent element selector here>'})",
-      "  .find(${2:'<Enter a child element selector here>'})",
-      "  .then(($${3:enterNameOfElementHere} => {",
-			"    const INITIAL_${4:ENTER_NAME_OF_ELEMENT_HERE} = $${3:enterNameOfElementHere}.val()",
-			"    ${5:// <Do something here to change the element value>}",
-      "    cy.get(${1:'<Enter a parent element selector here>'})",
-      "      .find(${2:'<Enter a child element selector here>'})",
-      "      .should('not.contain', INITIAL_${4:ENTER_NAME_OF_ELEMENT_HERE})",
-			"  }))$0"
+      "    .find(${2:'<Enter a child element selector here>'})",
+      "    .then(($${3:enterNameOfElementHere}) => {",
+			"      const INITIAL_${4:ENTER_NAME_OF_ELEMENT_HERE} = $${3:enterNameOfElementHere}.val();",
+			"      ${5:// <Do something here to change the element value>}",
+      "      cy.get(${1:'<Enter a parent element selector here>'})",
+      "          .find(${2:'<Enter a child element selector here>'})",
+      "          .should('not.contain', INITIAL_${4:ENTER_NAME_OF_ELEMENT_HERE})",
+			"   });$0"
     ],
   "description": "Assert that element text changes after action - descendant"
   },
@@ -257,8 +261,8 @@
 		"prefix": "demp",
 		"body": [
       "cy.get(${1:'<Enter a parent element selector here>'})",
-      "  .find(${2:'<Enter a child element selector here>'})",
-      "  .should('be.empty')$0"
+      "    .find(${2:'<Enter a child element selector here>'})",
+      "    .should('be.empty');$0"
     ],
     "description": "Assert that element is empty - descendant"
   },
@@ -267,8 +271,8 @@
 		"prefix": "dcla",
 		"body": [
       "cy.get(${1:'<Enter a parent element selector here>'})",
-      "  .find(${2:'<Enter a child element selector here>'})",
-      "  .should('have.class', ${3:'<Enter class here>'})$0"
+      "    .find(${2:'<Enter a child element selector here>'})",
+      "    .should('have.class', ${3:'<Enter class here>'});$0"
     ],
     "description": "Assert that element has class - descendant"
   },
@@ -277,8 +281,8 @@
 		"prefix": "dncla",
 		"body": [
       "cy.get(${1:'<Enter a parent element selector here>'})",
-      "  .find(${2:'<Enter a child element selector here>'})",
-      "  .should('not.have.class', ${3:'<Enter class here>'})$0"
+      "    .find(${2:'<Enter a child element selector here>'})",
+      "    .should('not.have.class', ${3:'<Enter class here>'});$0"
     ],
     "description": "Assert that element does NOT have class - descendant"
   },
@@ -287,8 +291,8 @@
 		"prefix": "datt",
 		"body": [
       "cy.get(${1:'<Enter a parent element selector here>'})",
-      "  .find(${2:'<Enter a child element selector here>'})",
-      "  .should('have.attr', '${3:<Enter attribute name here>}', '${4:<Enter attribute value here>}')$0"
+      "    .find(${2:'<Enter a child element selector here>'})",
+      "    .should('have.attr', '${3:<Enter attribute name here>}', '${4:<Enter attribute value here>}');$0"
     ],
     "description": "Assert that elment has attribute - descendant"
   },
@@ -297,8 +301,8 @@
 		"prefix": "dnatt",
 		"body": [
       "cy.get(${1:'<Enter a parent element selector here>'})",
-      "  .find(${2:'<Enter a child element selector here>'})",
-      "  .should('not.have.attr', '${3:<Enter attribute name here>}', '${4:<Enter attribute value here>}')$0"
+      "    .find(${2:'<Enter a child element selector here>'})",
+      "    .should('not.have.attr', '${3:<Enter attribute name here>}', '${4:<Enter attribute value here>}');$0"
     ],
     "description": "Assert that element does NOT have attribute - descendant"
   }

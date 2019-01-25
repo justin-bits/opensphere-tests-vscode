@@ -20,15 +20,14 @@
 		"prefix": "spec",
 		"body": [
             "/// <reference types=\"Cypress\" />",
-            "var os = require('../../support/selectors.js')",
+            "var os = require('../../support/selectors.js');",
             "",
-            "describe('${1:<Enter top level test description here>}', function () {",
+            "describe('${1:<Enter top level test description here>}', function() {",
+            "  before('Login', function() {",
+            "    cy.login();",
+            "  });",
             "",
-            "  before('Login', function () {",
-            "    cy.login()",
-            "  })",
-            "",
-            "  it('should ${2:<enter test description here}', function () {",
+            "  it('should ${2:<enter test description here}', function() {",
             "    // Setup",
             "    ${3:// <Enter setup steps here>}",
             "",
@@ -37,8 +36,9 @@
             "",
             "    // Clean up",
             "    ${5:// <Enter clean up steps here>}",
-            "  })$0",
-            "})"
+            "  });$0",
+            "});",
+            ""
         ],
 		"description": "Template for new spec file"
     },
@@ -46,13 +46,12 @@
 		"scope": "javascript,typescript",
 		"prefix": "desc",
 		"body": [
-            "describe('${1:<Enter top level test description here>}', function () {",
+            "describe('${1:<Enter top level test description here>}', function() {",
+            "  before('Open opensphere', function() {",
+            "    cy.login();",
+            "  });",
             "",
-            "  before('Open opensphere', function () {",
-            "    cy.login()",
-            "  })",
-            "",
-            "  it('should ${2:<enter test description here}', function () {",
+            "  it('should ${2:<enter test description here}', function() {",
             "    // Setup",
             "    ${3:// <Enter setup steps here>}",
             "",
@@ -61,8 +60,9 @@
             "",
             "    // Clean up",
             "    ${5:// <Enter clean up steps here>}",
-            "  })$0",
-            "})"
+            "  });",
+            "});",
+            "$0"
         ],
 		"description": "Add describe block"
     },
@@ -70,7 +70,7 @@
 		"scope": "javascript,typescript",
 		"prefix": "it",
 		"body": [
-            "it('${1:<enter test description here}', function () {",
+            "it('${1:<enter test description here}', function() {",
             "  // Setup",
             "  ${2:// <Enter setup steps here>}",
             "",
@@ -79,7 +79,8 @@
             "",
             "  // Clean up",
             "  ${4:// <Enter clean up steps here>}",
-            "})$0"
+            "});",
+            "$0"
         ],
 		"description": "Add it block"
     },
@@ -87,9 +88,10 @@
 		"scope": "javascript,typescript",
 		"prefix": "bef",
 		"body": [
-            "before('${1:<enter before description here>}', function () {",
+            "before('${1:<enter before description here>}', function() {",
             "  ${2:// <Enter before steps here>}",
-            "})$0"
+            "});",
+            "$0"
         ],
 		"description": "Add before block"
     },
@@ -97,9 +99,10 @@
 		"scope": "javascript,typescript",
 		"prefix": "aft",
 		"body": [
-            "after('${1:<enter after description here>}', function () {",
+            "after('${1:<enter after description here>}', function() {",
             "  ${2:// <Enter after steps here>}",
-            "})$0"
+            "});",
+            "$0"
         ],
 		"description": "Add after block"
     },
@@ -110,12 +113,13 @@
             "// TODO: Remove exception handling promptly after referenced issue(s) have been resolved.",
             "cy.on('uncaught:exception', (err) => {",
             "// ${1:<Indicate the action that causes the console error here>} throws an error, #${2:<Enter the GitHub issue ID here>}",
-            "  if (err.message.includes('${3:<Enter the error message text fragment here>}')){",
-            "    expect(err.message).to.include('${3:<Enter the error message text fragment here>}')",
-            "    return false",
+            "  if (err.message.includes('${3:<Enter the error message text fragment here>}')) {",
+            "    expect(err.message).to.include('${3:<Enter the error message text fragment here>}');",
+            "    return false;",
             "  }",
-            "  return true",
-        "})$0"
+            "  return true;",
+        "});",
+        "$0"
         ],
 		"description": "Add exception handling"
     },
