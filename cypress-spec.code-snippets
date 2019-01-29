@@ -111,7 +111,7 @@
 		"prefix": "exc",
 		"body": [
             "// TODO: Remove exception handling promptly after referenced issue(s) have been resolved.",
-            "cy.on('uncaught:exception', (err) => {",
+            "cy.on('uncaught:exception', function(err) {",
             "// ${1:<Indicate the action that causes the console error here>} throws an error, #${2:<Enter the GitHub issue ID here>}",
             "  if (err.message.includes('${3:<Enter the error message text fragment here>}')) {",
             "    expect(err.message).to.include('${3:<Enter the error message text fragment here>}');",

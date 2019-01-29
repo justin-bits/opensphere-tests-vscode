@@ -92,7 +92,7 @@
 		"body": [
       "cy.get(${1:'<Enter a parent element selector here>'})",
       "    .find(${2:'<Enter a child element selector here>'})",
-      "    .then(($element) => {",
+      "    .then(function($element) {",
       "      cy.log($element.text());",
       "    });$0",
     ],
@@ -104,7 +104,7 @@
 		"body": [
       "cy.get(${1:'<Enter a parent element selector here>'})",
       "    .find(${2:'<Enter a child element selector here>'})",
-      "    .then(($element) => {",
+      "    .then(function($element) {",
       "      cy.log($element.val());",
       "    });$0",
     ],
@@ -230,7 +230,7 @@
 		"body": [
       "cy.get(${1:'<Enter a parent element selector here>'})",
       "    .find(${2:'<Enter a child element selector here>'})",
-      "    .then(($${3:enterNameOfElementHere}) => {",
+      "    .then(function($${3:enterNameOfElementHere}) {",
 			"      const INITIAL_${4:ENTER_NAME_OF_ELEMENT_HERE} = $${3:enterNameOfElementHere}.text();",
 			"      ${5:// <Do something here to change the element text>}",
       "      cy.get(${1:'<Enter a parent element selector here>'})",
@@ -246,7 +246,7 @@
 		"body": [
       "cy.get(${1:'<Enter a parent element selector here>'})",
       "    .find(${2:'<Enter a child element selector here>'})",
-      "    .then(($${3:enterNameOfElementHere}) => {",
+      "    .then(function($${3:enterNameOfElementHere}) {",
 			"      const INITIAL_${4:ENTER_NAME_OF_ELEMENT_HERE} = $${3:enterNameOfElementHere}.val();",
 			"      ${5:// <Do something here to change the element value>}",
       "      cy.get(${1:'<Enter a parent element selector here>'})",

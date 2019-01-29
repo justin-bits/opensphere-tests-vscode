@@ -94,13 +94,13 @@
 
   // Usage: Use to quickly log an element's text to Cypress during execution to aid in writing tests.
   // Should not be left in tests.  Only for non-input elements.
-  // Example: cy.get(os.Layers_Dialog.Layers.Tree.LAYER_1).then((layer => {cy.log(layer.text())}))
+  // Example: cy.get(os.Layers_Dialog.Layers.Tree.LAYER_1).then((function(layer) {cy.log(layer.text())}))
   // Documentation: https://docs.cypress.io/api/commands/log.html
   "Command: Log text to Cypress": {
 		"scope": "javascript,typescript",
 		"prefix": "log",
 		"body": [
-      "cy.get(${1:'<Enter an element selector here>'}).then(($element) => {",
+      "cy.get(${1:'<Enter an element selector here>'}).then(function($element) {",
       "  cy.log($element.text());",
       "});$0",
       ],
@@ -109,13 +109,13 @@
 
   // Usage: Use to quickly log an element's value to Cypress during execution to aid in writing tests.
   // Should not be left in tests. Only for input elements.
-  // Example: cy.get(os.Toolbar.Date.FIELD).then((date => {cy.log(date.val())}))
+  // Example: cy.get(os.Toolbar.Date.FIELD).then(function(date) {cy.log(date.val())}))
   // Documentation: https://docs.cypress.io/api/commands/log.html
   "Command: Log value to Cypress": {
 		"scope": "javascript,typescript",
 		"prefix": "log",
 		"body": [
-      "cy.get(${1:'<Enter an element selector here>'}).then(($element) => {",
+      "cy.get(${1:'<Enter an element selector here>'}).then(function($element) {",
       "  cy.log($element.val());",
       "});$0",
       ],
@@ -258,7 +258,7 @@
   // Usage: Use when the initial text of the element will be used during the test, and the text
   // cannot be known until runtime.  A common scenario is to make note of the current text, take
   // an action that should result in a change to the text, then re-check the text.
-  // Example: cy.get(os.Status_bar.ZOOM).then(($zoom => {
+  // Example: cy.get(os.Status_bar.ZOOM).then(function($zoom) {
   //   const INITIAL_ZOOM = $zoom.text()
   //   cy.get(os.Map.ZOOM_IN_BUTTON).click()
   //   cy.get(os.Status_bar.ZOOM).should('not.contain', INITIAL_ZOOM)
@@ -268,7 +268,7 @@
 		"scope": "javascript,typescript",
 		"prefix": "cha",
 		"body": [
-			"cy.get(${1:'<Enter an element selector here>'}).then(($${2:enterNameOfElementHere}) => {",
+			"cy.get(${1:'<Enter an element selector here>'}).then(function($${2:enterNameOfElementHere}) {",
       "  const INITIAL_${3:ENTER_NAME_OF_ELEMENT_HERE} = $${2:enterNameOfElementHere}.text();",
 			"  ${4:// <Do something here to change the element text>}",
 			"  cy.get(${1:'<Enter an element selector here>'}).should('not.contain', INITIAL_${3:ENTER_NAME_OF_ELEMENT_HERE});",
@@ -280,7 +280,7 @@
   // Usage: Use when the initial value of the element will be used during the test, and the text
   // cannot be known until runtime.  A common scenario is to make note of the current value, take
   // an action that should result in a change to the value, then re-check the value.
-  // Example: cy.get(os.Toolbar.Date.FIELD).then(($date => {
+  // Example: cy.get(os.Toolbar.Date.FIELD).then(function($date) {
   //   const INITIAL_DATE = $date.val()
   //   cy.get(os.Toolbar.NEXT_DAY_BUTTON).click()
   //   cy.get(os.Toolbar.Date.FIELD).should('not.contain', INITIAL_DATE)
@@ -290,7 +290,7 @@
 		"scope": "javascript,typescript",
 		"prefix": "cha",
 		"body": [
-			"cy.get(${1:'<Enter an element selector here>'}).then(($${2:enterNameOfElementHere}) => {",
+			"cy.get(${1:'<Enter an element selector here>'}).then(function($${2:enterNameOfElementHere}) {",
 			"  const INITIAL_${3:ENTER_NAME_OF_ELEMENT_HERE} = $${2:enterNameOfElementHere}.val();",
 			"  ${4:// <Do something here to change the element value>}",
 			"  cy.get(${1:'<Enter an element selector here>'}).should('not.contain', INITIAL_${3:ENTER_NAME_OF_ELEMENT_HERE});",
