@@ -128,5 +128,14 @@
 		"prefix": "todo",
 		"body": "// TODO: ${1:<Enter todo text here>}",
 		"description": "Adds TODO comment"
-	}
+  },
+  "Stub route": {
+		"scope": "javascript,typescript",
+		"prefix": "stu",
+		"body": [
+      "cy.route('**/${1:<Enter path folder here>}/${2:<Enter resource here>}', 'fx:/smoke-tests/${3:<Enter test script folder here>}/${4:<Enter filename here>}.stub.xml')",
+      "    .as('${5:<Enter alias name here>}');$0",
+      ],
+		"description": "Add network route"
+    },
 }
