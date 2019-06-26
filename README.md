@@ -6,6 +6,7 @@ Adds snippets for...
 * New spec files
 * Working with elements, and descendants of elements
 * Error handling
+* Image comparisons
 
 Adds settings for...
 * ```cypress.json``` intelligent code completion

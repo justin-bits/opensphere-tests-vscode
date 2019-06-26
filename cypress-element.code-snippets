@@ -79,7 +79,37 @@
 		"description": "Clear element text"
   },
   
-  
+  // Usage: Use to compare an image of the application with a baseline image.  On the first script execution,
+  // a baseline image will be stored.  Subsequent exequtions will make a comparison.
+  // Global thresholds (at pixel and image level) are set in commands.js.  Override thresholds as needed.
+  // Example: cy.imageComparison('features loaded');
+  // Documentation: https://docs.cypress.io/api/commands/invoke.html
+	"Command: Image comparison": {
+		"scope": "javascript,typescript",
+		"prefix": "com",
+		"body": "cy.imageComparison('${1:<Enter name for image here>}');$0",
+		"description": "Compare application to baseline image"
+  },
+
+  // Usage: Compare an image, but set a specific threshold. Global thresholds (at pixel and image level)
+  // are set in commands.js.  Override thresholds as needed.
+  // Example: cy.matchImageSnapshot('heatmap loaded', {
+  //		    failureThreshold: 0.037,
+  //    		failureThresholdType: 'percent'
+  // 		  });
+  // Documentation: https://docs.cypress.io/api/commands/invoke.html
+	"Command: Image comparison with thresholds": {
+		"scope": "javascript,typescript",
+		"prefix": "comt",
+		"body": [
+			"cy.imageComparison('${1:<Enter name for image here>}', {",
+			"  failureThreshold: '${2:<Enter threshold value>}',",
+			"  failureThresholdType: 'percent'",
+			"});$0"
+		],
+		"description": "Compare application to baseline image"
+  },
+
   // Usage: Use to invoke a function on an element.  Can obtain additional information about an
   // element or to change the state of the application to aid in testing.
   // Example 1: cy.get(os.Timeline.VIEW_WINDOW).invoke('position').should('not.equal', previousPosition)
