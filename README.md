@@ -14,16 +14,20 @@ Adds settings for...
 * Tabs, spaces, and ruler
 
 ## Installation
-1. Ensure the .vscode folder exists at the root of the project. Note that the .vscode folder is hidden and may need to be created. ```\opensphere\.vscode```
-        
-        mkdir .vscode
-  
-2. Clone this repository directly to the .vscode folder in the project.  Snippets must ***not*** be located in a subfolder to .vscode; if they are they won't work. 
+Note: Snippets must ***not*** be located in a subfolder to .vscode; if they are they won't work. Cloning in a way that results in ```.vscode/opensphere-tests-vscode/*snippet_files*``` existing, will not work.  Expected: ```/opensphere/.vscode/*snippet_files*```
 
-   * To clone from project root
+Choose ONE option below:
+
+* To clone from project root and create the .vscode folder at the same time:
         
-         git clone https://github.com/justin-bits/opensphere-tests-vscode.git
-        
-   * To clone from within ```.vscode```
- 
-         git clone https://github.com/justin-bits/opensphere-tests-vscode.git .
+         cd to /opensphere
+
+         git clone https://github.com/justin-bits/opensphere-tests-vscode.git .vscode
+
+* To create the .vscode folder, then clone from within the folder:
+      
+        mkdir .vscode
+
+        cd .vscode
+
+        git clone https://github.com/justin-bits/opensphere-tests-vscode.git .
