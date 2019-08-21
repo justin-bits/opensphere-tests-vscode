@@ -18,16 +18,24 @@ Note: Snippets must ***not*** be located in a subfolder to .vscode; if they are 
 
 Choose ONE option below:
 
-* To clone from project root and create the .vscode folder at the same time:
+* Project: To clone from project root and create the .vscode folder at the same time:
         
          cd to /opensphere
 
          git clone https://github.com/justin-bits/opensphere-tests-vscode.git .vscode
 
-* To create the .vscode folder, then clone from within the folder:
+* Project: To create the .vscode folder in the project, then clone from within the folder:
       
         mkdir .vscode
 
         cd .vscode
+
+        git clone https://github.com/justin-bits/opensphere-tests-vscode.git .
+
+* Global: To clone from within the user snippets folder:
+      
+        Linux: cd ~/.config/Code/User/snippets
+        MacOS: cd ~/Library/Application Support/Code/User/snippets
+        Windows/Git Bash: cd ~/AppData/Roaming/Code/User/snippets
 
         git clone https://github.com/justin-bits/opensphere-tests-vscode.git .
