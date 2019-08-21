@@ -2,9 +2,10 @@
   "explorer.confirmDelete": false,
   "workbench.editor.closeOnFileDelete": true,
   "files.autoSave": "off",
+  "files.eol": "\n",
   "javascript.updateImportsOnFileMove.enabled": "always",
   "editor.rulers": [
-    100
+    120
   ],
   "editor.detectIndentation": false,
   "editor.tabSize": 2,
@@ -15,5 +16,6 @@
       ],
       "url": "https://on.cypress.io/cypress.schema.json"
     }
-  ]
+  ],
+  "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe"
 }
