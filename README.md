@@ -32,11 +32,3 @@ Choose ONE option below:
         cd .vscode
 
         git clone https://github.com/justin-bits/opensphere-tests-vscode.git .
-
-* Global: To clone from within the user snippets folder:
-      
-        Linux: cd ~/.config/Code/User/snippets
-        MacOS: cd ~/Library/Application Support/Code/User/snippets
-        Windows/Git Bash: cd ~/AppData/Roaming/Code/User/snippets
-
-        git clone https://github.com/justin-bits/opensphere-tests-vscode.git .
