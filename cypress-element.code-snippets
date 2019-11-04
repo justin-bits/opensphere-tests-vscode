@@ -33,7 +33,7 @@
 	"Command: Right click": {
 		"scope": "javascript,typescript",
 		"prefix": "rcli",
-		"body": "cy.get(${1:'<Enter an element selector here>'}).rightClick();$0",
+		"body": "cy.get(${1:'<Enter an element selector here>'}).rightclick();$0",
 		"description": "Right click on element"
   },
   

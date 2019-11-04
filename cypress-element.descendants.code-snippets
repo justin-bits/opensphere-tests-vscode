@@ -32,7 +32,7 @@
 		"body": [
       "cy.get(${1:'<Enter a parent element selector here>'})",
       "    .find(${2:'<Enter a child element selector here>'})",
-      "    .rightClick();$0"
+      "    .rightclick();$0"
     ],
     "description": "Right click on element - descendant"
   },
