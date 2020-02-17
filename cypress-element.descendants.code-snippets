@@ -140,7 +140,7 @@
     ],
     "description": "Assert that element does NOT exist - descendant"
   },
-	"Assert: Contains text (exact) - descendant": {
+	"Assert: Contains text (partial) - descendant": {
 		"scope": "javascript,typescript",
 		"prefix": "dcon",
 		"body": [
@@ -150,7 +150,7 @@
     ],
     "description": "Assert that element contains text (exact) - descendant"
   },
-	"Assert: Does NOT contain text (exact) - descendant": {
+	"Assert: Does NOT contain text (partial) - descendant": {
 		"scope": "javascript,typescript",
 		"prefix": "dncon",
 		"body": [
@@ -226,7 +226,7 @@
   },
 	"Assert: Text changed (after action) - descendant": {
 		"scope": "javascript,typescript",
-		"prefix": "dcha",
+		"prefix": "dtcha",
 		"body": [
       "cy.get(${1:'<Enter a parent element selector here>'})",
       "    .find(${2:'<Enter a child element selector here>'})",
@@ -242,7 +242,7 @@
   },
 	"Assert: Value changed (after action) - descendant": {
 		"scope": "javascript,typescript",
-		"prefix": "dcha",
+		"prefix": "dvcha",
 		"body": [
       "cy.get(${1:'<Enter a parent element selector here>'})",
       "    .find(${2:'<Enter a child element selector here>'})",

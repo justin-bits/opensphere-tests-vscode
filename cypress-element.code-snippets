@@ -78,37 +78,6 @@
 		"body": "cy.get(${1:'<Enter an element selector here>'}).clear();$0",
 		"description": "Clear element text"
   },
-  
-  // Usage: Use to compare an image of the application with a baseline image.  On the first script execution,
-  // a baseline image will be stored.  Subsequent exequtions will make a comparison.
-  // Global thresholds (at pixel and image level) are set in commands.js.  Override thresholds as needed.
-  // Example: cy.imageComparison('features loaded');
-  // Documentation: https://docs.cypress.io/api/commands/invoke.html
-	"Command: Image comparison": {
-		"scope": "javascript,typescript",
-		"prefix": "com",
-		"body": "cy.imageComparison('${1:<Enter name for image here>}');$0",
-		"description": "Compare application to baseline image"
-  },
-
-  // Usage: Compare an image, but set a specific threshold. Global thresholds (at pixel and image level)
-  // are set in commands.js.  Override thresholds as needed.
-  // Example: cy.matchImageSnapshot('heatmap loaded', {
-  //		    failureThreshold: 0.037,
-  //    		failureThresholdType: 'percent'
-  // 		  });
-  // Documentation: https://docs.cypress.io/api/commands/invoke.html
-	"Command: Image comparison with thresholds": {
-		"scope": "javascript,typescript",
-		"prefix": "comt",
-		"body": [
-			"cy.imageComparison('${1:<Enter name for image here>}', {",
-			"  failureThreshold: '${2:<Enter threshold value>}',",
-			"  failureThresholdType: 'percent'",
-			"});$0"
-		],
-		"description": "Compare application to baseline image"
-  },
 
   // Usage: Use to invoke a function on an element.  Can obtain additional information about an
   // element or to change the state of the application to aid in testing.
@@ -152,6 +121,15 @@
 		"description": "Write element value to the log"
 	},
 
+	// Usage: Use to upload a file like a KMZ or CSV
+  // Example: cy.upload('regression-tests/layers-dialog/feature-list/feat.kml');
+  "Command: Upload a file": {
+		"scope": "javascript,typescript",
+		"prefix": "upl",
+		"body": "cy.upload('${1:<Enter path/file here>}');",
+		"description": "Upload a file"
+	},
+
   // Usage: Use to assert an element is visible.  This is preferred over asserting
   // that an element exists.  (Element exists is a snippet that has been intentionally ommited)
   // Example: cy.get(os.Layers_Dialog.Areas.SEARCH_FIELD).should('be.visible')
@@ -188,19 +166,19 @@
   // Example:cy.get(os.Layers_Dialog.Layers.Tree.LAYER_4)
   //  .should('contain', 'load-data-file-test-features.geojson Features (291)')
   // Documentation: https://docs.cypress.io/guides/references/assertions.html
-	"Assert: Contains text (exact)": {
+	"Assert: Contains text (partial)": {
 		"scope": "javascript,typescript",
 		"prefix": "con",
 		"body": "cy.get(${1:'<Enter an element selector here>'}).should('contain', '${2:<Enter text here>}');$0",
-		"description": "Assert that element contains text (exact)"
+		"description": "Assert that element contains text (partial)"
   },
 
   // Usage: Inverse of previous.
-	"Assert: Does NOT contain text (exact)": {
+	"Assert: Does NOT contain text (partial)": {
 		"scope": "javascript,typescript",
 		"prefix": "ncon",
 		"body": "cy.get(${1:'<Enter an element selector here>'}).should('not.contain', '${2:<Enter text here>}');$0",
-		"description": "Assert that element does NOT contain text (exact)"
+		"description": "Assert that element does NOT contain text (partial)"
   },
 
   // Usage: Use to assert that an element contains text matching a regular expression.  Use this 
@@ -228,11 +206,73 @@
 		"prefix": "nrcon",
 		"body": [
       "cy.get(${1:'<Enter an element selector here>'})",
-      "  .invoke('text')",
-      "  .should('not.match', new RegExp (${2:'<Enter regular expression here>'}));$0"
+      "    .invoke('text')",
+      "    .should('not.match', new RegExp(${2:'<Enter regular expression here>'}));$0"
     ],
 		"description": "Assert that element does NOT contain text (regex)"
-  },
+	},
+	
+	// Usage: Use to assert that an element within an iframe contains text.
+  // Matches on partial text but does not support wildcards.
+  // Example: cy.get(dialogs.descriptionInfoDialog.CONTENT).then(function($iframe) {
+	// 	var $body = $iframe.contents().find(opensphere.Application.PAGE);
+	// 	expect($body.text()).to.contain('test description');
+	//  });
+	"Assert: Contains text (iframe - partial)": {
+		"scope": "javascript,typescript",
+		"prefix": "icon",
+		"body": [
+			"cy.get(${1:'<Enter iframe selector here>'}).then(function($iframe) {",
+			"  var $${2:enterNameOfElementHere} = $iframe.contents().find(${3:'<Enter element selector here>'});",
+			"  expect($${2:enterNameOfElementHere}.text()).to.contain('${4:<Enter text here>}');",
+			"});$0"
+		],
+		"description": "Assert that element contains text (iframe - partial)"
+	},
+
+	// Usage: Inverse of previous.
+	"Assert: Does NOT Contain text (iframe - partial)": {
+		"scope": "javascript,typescript",
+		"prefix": "incon",
+		"body": [
+			"cy.get(${1:'<Enter iframe selector here>'}).then(function($iframe) {",
+			"  var $${2:enterNameOfElementHere} = $iframe.contents().find(${3:'<Enter element selector here>'});",
+			"  expect($${2:enterNameOfElementHere}.text()).not.to.contain('${4:<Enter text here>}');",
+			"});$0"
+		],
+		"description": "Assert that element does NOT contain text (iframe - partial)"
+	},
+
+	// Usage: Use to assert that an element within an iframe contains exact text.
+  // Matches on exact text only.
+  // Example: cy.get(dialogs.descriptionInfoDialog.CONTENT).then(function($iframe) {
+	// 	var $body = $iframe.contents().find(opensphere.Application.PAGE);
+	// 	expect($body.text()).to.equal('test description');
+	//  });
+	"Assert: Contains text (iframe - exact)": {
+		"scope": "javascript,typescript",
+		"prefix": "iequ",
+		"body": [
+			"cy.get(${1:'<Enter iframe selector here>'}).then(function($iframe) {",
+			"  var $${2:enterNameOfElementHere} = $iframe.contents().find(${3:'<Enter element selector here>'});",
+			"  expect($${2:enterNameOfElementHere}.text()).to.equal('${4:<Enter text here>}');",
+			"});$0"
+		],
+		"description": "Assert that element contains exact text (iframe - exact)"
+	},
+
+	// Usage: Inverse of previous.
+	"Assert: Does NOT Contain text (iframe - exact)": {
+		"scope": "javascript,typescript",
+		"prefix": "inequ",
+		"body": [
+			"cy.get(${1:'<Enter iframe selector here>'}).then(function($iframe) {",
+			"  var $${2:enterNameOfElementHere} = $iframe.contents().find(${3:'<Enter element selector here>'});",
+			"  expect($${2:enterNameOfElementHere}.text()).not.to.equal('${4:<Enter text here>}');",
+			"});$0"
+		],
+		"description": "Assert that element does NOT contain exact text (iframe - exact)"
+	},
 
   // Usage: Use to assert that an element has a specific value.  Only used for form inputs (e.g.
   // input, select, and textarea). Does NOT match on partial text, OR support wildcards; use
@@ -296,7 +336,7 @@
   // Documentation: https://docs.cypress.io/faq/questions/using-cypress-faq.html#How-do-I-get-an-element%E2%80%99s-text-contents
 	"Assert: Text changed (after action)": {
 		"scope": "javascript,typescript",
-		"prefix": "cha",
+		"prefix": "tcha",
 		"body": [
 			"cy.get(${1:'<Enter an element selector here>'}).then(function($${2:enterNameOfElementHere}) {",
       "  const INITIAL_${3:ENTER_NAME_OF_ELEMENT_HERE} = $${2:enterNameOfElementHere}.text();",
@@ -318,7 +358,7 @@
   // Documentation: https://docs.cypress.io/faq/questions/using-cypress-faq.html#How-do-I-get-an-element%E2%80%99s-text-contents
 	"Assert: Value changed (after action)": {
 		"scope": "javascript,typescript",
-		"prefix": "cha",
+		"prefix": "vcha",
 		"body": [
 			"cy.get(${1:'<Enter an element selector here>'}).then(function($${2:enterNameOfElementHere}) {",
 			"  const INITIAL_${3:ENTER_NAME_OF_ELEMENT_HERE} = $${2:enterNameOfElementHere}.val();",
@@ -375,5 +415,34 @@
 		"prefix": "natt",
 		"body": "cy.get(${1:'<Enter an element selector here>'}).should('not.have.attr', '${2:<Enter attribute name here>}', '${3:<Enter attribute value here>}');$0",
 		"description": "Assert that element does NOT have attribute"
+	},
+	
+	// Usage: Use to compare an image of the application with a baseline image.  On the first script execution,
+  // a baseline image will be stored.  Subsequent exequtions will make a comparison.
+  // Global thresholds (at pixel and image level) are set in commands.js.  Override thresholds as needed.
+  // Example: cy.imageComparison('features loaded');
+	"Assert: Image comparison": {
+		"scope": "javascript,typescript",
+		"prefix": "com",
+		"body": "cy.imageComparison('${1:<Enter name for image here>}');$0",
+		"description": "Compare application to baseline image"
+	},
+
+	// Usage: Compare an image, but set a specific threshold. Global thresholds (at pixel and image level)
+  // are set in commands.js.  Override thresholds as needed.
+  // Example: cy.matchImageSnapshot('heatmap loaded', {
+  //		    failureThreshold: 0.037,
+  //    		failureThresholdType: 'percent'
+  // 		  });
+	"Assert: Image comparison with thresholds": {
+		"scope": "javascript,typescript",
+		"prefix": "comt",
+		"body": [
+			"cy.imageComparison('${1:<Enter name for image here>}', {",
+			"  failureThreshold: '${2:<Enter threshold value>}',",
+			"  failureThresholdType: 'percent'",
+			"});$0"
+		],
+		"description": "Compare application to baseline image"
   }
 }
