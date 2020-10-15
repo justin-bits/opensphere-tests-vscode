@@ -42,6 +42,24 @@
         ],
 		"description": "Template for new spec file"
   },
+  "Add header": {
+    "scope": "javascript,typescript",
+    "prefix": "head",
+    "body": [
+            "// *** DESCRIPTION ***",
+            "// Intent:",
+            "// ${1:<Enter intent here>}",
+            "// Exclusions:",
+            "// ${2:<Enter exclusions here>}",
+            "",
+            "// *** DATA REQUIREMENTS ***",
+            "// Persistent:",
+            "// ${3:<Enter persistent requirements here>}",
+            "// Non-persistent:",
+            "// ${4:<Enter non-persistent requirements here>}$0"
+        ],
+    "description": "Add header"
+  },
   "Add describe": {
     "scope": "javascript,typescript",
     "prefix": "desc",
