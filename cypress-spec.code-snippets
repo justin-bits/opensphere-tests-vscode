@@ -41,11 +41,11 @@
             ""
         ],
 		"description": "Template for new spec file"
-    },
-    "Add describe": {
-		"scope": "javascript,typescript",
-		"prefix": "desc",
-		"body": [
+  },
+  "Add describe": {
+    "scope": "javascript,typescript",
+    "prefix": "desc",
+    "body": [
             "describe('${1:<Enter top level test description here>}', function() {",
             "  before('Open opensphere', function() {",
             "    cy.login();",
@@ -64,12 +64,12 @@
             "});",
             "$0"
         ],
-		"description": "Add describe block"
-    },
-    "Add it": {
-		"scope": "javascript,typescript",
-		"prefix": "it",
-		"body": [
+    "description": "Add describe block"
+  },
+  "Add it": {
+    "scope": "javascript,typescript",
+    "prefix": "it",
+    "body": [
             "it('${1:<enter test description here}', function() {",
             "  // Setup",
             "  ${2:// <Enter setup steps here>}",
@@ -82,34 +82,34 @@
             "});",
             "$0"
         ],
-		"description": "Add it block"
-    },
-    "Add before": {
-		"scope": "javascript,typescript",
-		"prefix": "bef",
-		"body": [
+    "description": "Add it block"
+  },
+  "Add before": {
+    "scope": "javascript,typescript",
+    "prefix": "bef",
+    "body": [
             "before('${1:<enter before description here>}', function() {",
             "  ${2:// <Enter before steps here>}",
             "});",
             "$0"
         ],
-		"description": "Add before block"
-    },
-    "Add after": {
-		"scope": "javascript,typescript",
-		"prefix": "aft",
-		"body": [
+    "description": "Add before block"
+  },
+  "Add after": {
+    "scope": "javascript,typescript",
+    "prefix": "aft",
+    "body": [
             "after('${1:<enter after description here>}', function() {",
             "  ${2:// <Enter after steps here>}",
             "});",
             "$0"
         ],
-		"description": "Add after block"
-    },
-    "Handle exception": {
-		"scope": "javascript,typescript",
-		"prefix": "exc",
-		"body": [
+    "description": "Add after block"
+  },
+  "Handle exception": {
+    "scope": "javascript,typescript",
+    "prefix": "exc",
+    "body": [
             "// TODO: Remove exception handling promptly after referenced issue(s) have been resolved.",
             "cy.on('uncaught:exception', function(err) {",
             "// ${1:<Indicate the action that causes the console error here>} throws an error, #${2:<Enter the GitHub issue ID here>}",
@@ -121,21 +121,21 @@
         "});",
         "$0"
         ],
-		"description": "Add exception handling"
-    },
-    "Add TODO": {
-		"scope": "javascript,typescript",
-		"prefix": "todo",
-		"body": "// TODO: ${1:<Enter todo text here>}",
-		"description": "Adds TODO comment"
+    "description": "Add exception handling"
+  },
+  "Add TODO": {
+    "scope": "javascript,typescript",
+    "prefix": "todo",
+    "body": "// TODO: ${1:<Enter todo text here>}",
+    "description": "Adds TODO comment"
   },
   "Stub route": {
-		"scope": "javascript,typescript",
-		"prefix": "stu",
-		"body": [
+    "scope": "javascript,typescript",
+    "prefix": "stu",
+    "body": [
       "cy.route('**/${1:<Enter path folder here>}/${2:<Enter resource here>}', 'fx:/smoke-tests/${3:<Enter test script folder here>}/${4:<Enter filename here>}.stub.xml')",
       "    .as('${5:<Enter alias name here>}');$0",
       ],
-		"description": "Add network route"
-    },
+    "description": "Add network route"
+  }
 }
